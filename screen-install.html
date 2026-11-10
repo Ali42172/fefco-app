@@ -1,0 +1,184 @@
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Go Back" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="FEFCO Solutions Logo" class="h-8 w-auto object-contain shrink-0" src="./logo.png"/><h1 class="font-headline-sm text-on-surface truncate">Install App Pwa Bottom Sheet</h1></div><div class="flex items-center gap-space-xs shrink-0"><span class="hidden xs:inline-flex items-center px-space-sm py-0.5 rounded-full font-label-sm bg-surface-container-low text-on-surface border border-outline-variant/30">Dubai 10:42 AM</span><span class="inline-flex items-center px-space-xs py-0.5 rounded-full font-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold leading-none">TEST MODE</span><button aria-label="More options" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">more_vert</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface"><div class="flex flex-col w-full relative select-none">
+<!-- BACKGROUND DASHBOARD (Dimmed with light warm scrim) -->
+<div aria-hidden="true" class="w-full px-gutter pt-space-md pb-12 flex flex-col gap-space-lg filter blur-[2px] opacity-60 pointer-events-none">
+<!-- Quick Status Ticker -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">wb_sunny</span>
+</div>
+<div>
+<span class="block font-headline-sm text-on-surface">Dubai Operations</span>
+<span class="block font-body-sm text-on-surface-variant">34 Active Teams in Field</span>
+</div>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm">Live Sync</span>
+</div>
+<!-- KPI Metric Cards Grid -->
+<div class="grid grid-cols-2 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col">
+<span class="font-label-md text-on-surface-variant">Today's Leads</span>
+<span class="font-kpi-metric text-on-surface mt-1">48</span>
+<span class="font-label-sm text-tertiary mt-space-xs flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +18% vs avg
+        </span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col">
+<span class="font-label-md text-on-surface-variant">Dispatched</span>
+<span class="font-kpi-metric text-primary-container mt-1">39</span>
+<span class="font-label-sm text-on-surface-variant mt-space-xs">9 Pending slots</span>
+</div>
+</div>
+<!-- Sample Villa Lead Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm px-space-xs py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold">Arabian Ranches III</span>
+<span class="font-label-sm text-primary font-bold">11:15 AM GST</span>
+</div>
+<div class="flex items-center gap-space-sm mt-1">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">solar_power</span>
+</div>
+<div>
+<p class="font-label-lg text-on-surface leading-tight">Solar Array Deep Clean &amp; Inverter Check</p>
+<p class="font-body-sm text-on-surface-variant">Villa 142, Street 6</p>
+</div>
+</div>
+</div>
+</div>
+<!-- LIGHT SCRIM OVERLAY (Warm, strictly luminous, no dark/black canvas) -->
+<div class="fixed inset-0 z-40 bg-surface-variant/40 backdrop-blur-[3px] transition-opacity duration-300" id="installBackdrop"></div>
+<!-- PWA INSTALL BOTTOM SHEET CONTAINER -->
+<div class="fixed inset-x-0 bottom-0 z-50 flex flex-col max-w-lg mx-auto bg-surface-container-lowest rounded-t-[24px] shadow-[0_-8px_32px_rgba(255,138,0,0.12),0_-2px_12px_rgba(39,49,63,0.06)] transform transition-transform duration-300 ease-out pb-safe" id="installSheet">
+<!-- Drag Handle -->
+<div class="w-full flex justify-center pt-3 pb-2 cursor-grab active:cursor-grabbing">
+<div class="w-12 h-1.5 rounded-full bg-outline-variant/60"></div>
+</div>
+<!-- Sheet Content -->
+<div class="px-gutter pt-space-xs pb-space-lg flex flex-col items-center text-center">
+<!-- Brand App Icon with Sun & Leaf -->
+<div class="relative w-16 h-16 rounded-[16px] bg-surface-container-lowest shadow-[0_4px_20px_-2px_rgba(255,138,0,0.2),0_2px_8px_rgba(31,41,55,0.06)] flex items-center justify-center mt-1 mb-space-sm">
+<img alt="FEFCO SOLUTIONS" class="w-14 h-auto object-contain" src="./logo.png"/>
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary-container"></span>
+</span>
+</div>
+<!-- Title & Subtitle -->
+<h2 class="font-headline-md text-on-surface">Install FEFCO SOLUTIONS</h2>
+<p class="font-body-md text-on-surface-variant max-w-[320px] mt-1 mb-space-md">
+        Add to your phone for instant notifications and 1-tap lead dispatch across Dubai.
+      </p>
+<!-- Three Key Benefit Rows -->
+<div class="w-full flex flex-col gap-space-xs text-left mb-space-lg">
+<!-- Benefit 1 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-7 h-7 rounded-full bg-tertiary-container/20 flex items-center justify-center shrink-0 mt-0.5 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-lg text-on-surface leading-tight">Opens like an app from your home screen</p>
+<p class="font-body-sm text-on-surface-variant mt-0.5">Enjoy full-screen speed with zero browser tab clutter.</p>
+</div>
+</div>
+<!-- Benefit 2 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-7 h-7 rounded-full bg-tertiary-container/20 flex items-center justify-center shrink-0 mt-0.5 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-lg text-on-surface leading-tight">Instant alerts for new leads and bookings</p>
+<p class="font-body-sm text-on-surface-variant mt-0.5">Real-time push alerts when Meta ads or WhatsApp leads drop in.</p>
+</div>
+</div>
+<!-- Benefit 3 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-7 h-7 rounded-full bg-tertiary-container/20 flex items-center justify-center shrink-0 mt-0.5 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-lg text-on-surface leading-tight">Works on slow mobile data</p>
+<p class="font-body-sm text-on-surface-variant mt-0.5">Cached client roster &amp; smooth offline sync across Dubai villa sites.</p>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full flex flex-col gap-space-xs">
+<button class="w-full h-12 rounded-[12px] bg-primary-container hover:bg-[#e57c00] active:scale-[0.98] transition-all flex items-center justify-center gap-space-xs shadow-[0_4px_16px_rgba(255,138,0,0.35)]" id="btnInstall" type="button">
+<span class="material-symbols-outlined text-on-primary text-[20px]">download</span>
+<span class="font-label-lg text-on-primary font-bold">Install App</span>
+</button>
+<button class="w-full h-11 flex items-center justify-center font-label-md text-on-surface-variant hover:text-on-surface active:opacity-70 transition-colors" id="btnDismiss" type="button">
+          Not now
+        </button>
+</div>
+<!-- iPhone Helper Callout -->
+<div class="w-full mt-space-xs p-space-sm rounded-[12px] bg-[#f0f9ff] text-left flex items-start gap-space-xs shadow-sm">
+<div class="w-5 h-5 rounded-full bg-[#bae6fd]/50 flex items-center justify-center shrink-0 mt-0.5 text-[#0369a1]">
+<span class="material-symbols-outlined text-[14px]">phone_iphone</span>
+</div>
+<div class="flex-1 font-body-sm text-[#0369a1] leading-relaxed">
+<span class="font-bold">On iPhone:</span> Tap Share
+          <span class="inline-flex items-center align-middle mx-1 px-1.5 py-0.5 rounded bg-surface-container-lowest shadow-sm text-on-surface">
+<svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+<polyline points="16 6 12 2 8 6"></polyline>
+<line x1="12" x2="12" y1="2" y2="15"></line>
+</svg>
+</span>
+          then scroll down and tap <span class="font-semibold text-on-surface">Add to Home Screen</span>
+<span class="inline-flex items-center align-middle mx-1 px-1.5 py-0.5 rounded bg-surface-container-lowest shadow-sm text-on-surface">
+<svg class="w-3.5 h-3.5 text-tertiary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect>
+<line x1="12" x2="12" y1="8" y2="16"></line>
+<line x1="8" x2="16" y1="12" y2="12"></line>
+</svg>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    let deferredPrompt = null;
+    const installSheet = document.getElementById('installSheet');
+    const backdrop = document.getElementById('installBackdrop');
+    const btnInstall = document.getElementById('btnInstall');
+    const btnDismiss = document.getElementById('btnDismiss');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+
+    function dismissSheet() {
+      if (!installSheet || !backdrop) return;
+      installSheet.classList.add('translate-y-full');
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        installSheet.style.display = 'none';
+        backdrop.style.display = 'none';
+      }, 300);
+    }
+
+    if (btnInstall) {
+      btnInstall.addEventListener('click', async () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          deferredPrompt = null;
+        }
+        dismissSheet();
+      });
+    }
+
+    if (btnDismiss) {
+      btnDismiss.addEventListener('click', dismissSheet);
+    }
+
+    if (backdrop) {
+      backdrop.addEventListener('click', dismissSheet);
+    }
+  })();
+</script></main>

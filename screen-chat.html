@@ -1,0 +1,231 @@
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Go Back" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="FEFCO Solutions Logo" class="h-8 w-auto object-contain shrink-0" src="./logo.png"/><h1 class="font-headline-sm text-on-surface truncate">Whatsapp Chat View — Fefco Leads</h1></div><div class="flex items-center gap-space-xs shrink-0"><span class="hidden xs:inline-flex items-center px-space-sm py-0.5 rounded-full font-label-sm bg-surface-container-low text-on-surface border border-outline-variant/30">Dubai 10:42 AM</span><span class="inline-flex items-center px-space-xs py-0.5 rounded-full font-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold leading-none">TEST MODE</span><button aria-label="More options" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">more_vert</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface"><div class="flex flex-col w-full pb-safe">
+<!-- Dynamic Sub-Header / Conversation Context Header -->
+<div class="sticky top-16 z-30 bg-surface-container-lowest shadow-sm">
+<div class="px-margin py-space-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-label-lg font-bold">
+            PN
+          </div>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-tertiary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-sm text-on-surface truncate">Priya Nair</h2>
+<span class="px-2 py-0.5 rounded-full font-label-sm bg-tertiary-container/20 text-tertiary font-bold shrink-0">
+              Booked
+            </span>
+</div>
+<p class="font-body-sm text-on-surface-variant truncate">Jumeirah Islands · Solar water heater</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<button aria-label="Call customer" class="w-10 h-10 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center hover:bg-tertiary/20 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">call</span>
+</button>
+<button aria-label="Customer profile details" class="w-10 h-10 rounded-full bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">info</span>
+</button>
+</div>
+</div>
+<!-- 24h Meta SLA Notification Ribbon -->
+<div class="px-margin py-1.5 bg-tertiary/10 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-tertiary font-label-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>24h WhatsApp reply window open · closes 6:12 PM</span>
+</div>
+<span class="text-tertiary font-label-sm font-bold">GST</span>
+</div>
+</div>
+<!-- Messages Timeline Canvas -->
+<div class="flex-1 px-margin py-space-md flex flex-col gap-3.5 overflow-y-auto">
+<!-- Day Divider -->
+<div class="flex items-center justify-center my-1">
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm shadow-xs">
+        Today, 12 November
+      </span>
+</div>
+<!-- 1. Customer Incoming Message -->
+<div class="flex flex-col items-start max-w-[85%] self-start">
+<div class="bg-surface-container-lowest text-on-surface p-3.5 rounded-2xl rounded-tl-sm shadow-sm space-y-1">
+<p class="font-body-md text-on-surface leading-relaxed">
+          Hi, our solar water heater on the roof is leaking from the pressure valve since yesterday morning. Can someone come check it?
+        </p>
+<div class="flex items-center justify-end">
+<span class="font-label-sm text-on-surface-variant text-[10px]">9:35 AM</span>
+</div>
+</div>
+</div>
+<!-- 2. Automated Welcome Bot Message -->
+<div class="flex flex-col items-end max-w-[86%] self-end">
+<div class="bg-primary-fixed/30 text-on-surface p-3.5 rounded-2xl rounded-tr-sm shadow-sm space-y-1.5">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[15px]">smart_toy</span>
+<span class="font-label-sm uppercase tracking-wider text-[10px] font-bold">FEFCO Bot</span>
+</div>
+<p class="font-body-md text-on-surface leading-relaxed">
+          Hello Priya! Thanks for reaching out to FEFCO Solutions Dubai. Sara has logged your request for Solar Water Heater inspection.
+        </p>
+<div class="flex items-center justify-end gap-1">
+<span class="font-label-sm text-on-surface-variant text-[10px]">9:36 AM</span>
+<span class="material-symbols-outlined text-[15px] text-outline">done_all</span>
+</div>
+</div>
+</div>
+<!-- 3. WhatsApp Interactive Template Card -->
+<div class="flex flex-col items-end max-w-[90%] self-end">
+<div class="bg-primary-fixed/40 p-3.5 rounded-2xl rounded-tr-sm shadow-sm space-y-2.5 w-full">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-md font-bold text-on-primary-fixed-variant">FEFCO Instant Booking</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-[10px] font-semibold">Service Card</span>
+</div>
+<p class="font-body-md text-on-surface">
+          Please tap below to select your preferred inspection slot for your Jumeirah Islands villa.
+        </p>
+<!-- Rich Action CTA Button inside bubble -->
+<button class="w-full bg-surface-container-lowest active:bg-surface-container text-primary p-2.5 rounded-xl shadow-xs flex items-center justify-center gap-2 font-label-md transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Choose a visit time →</span>
+</button>
+<div class="flex items-center justify-end gap-1 pt-0.5">
+<span class="font-label-sm text-on-surface-variant text-[10px]">9:37 AM</span>
+<span class="material-symbols-outlined text-[15px] text-sky-500 font-bold">done_all</span>
+</div>
+</div>
+</div>
+<!-- 4. Customer Choice Reply -->
+<div class="flex flex-col items-start max-w-[85%] self-start">
+<div class="bg-surface-container-lowest text-on-surface p-3.5 rounded-2xl rounded-tl-sm shadow-sm space-y-1">
+<p class="font-body-md text-on-surface leading-relaxed">
+          Done! I picked Thursday at 4:00 PM.
+        </p>
+<div class="flex items-center justify-end">
+<span class="font-label-sm text-on-surface-variant text-[10px]">9:42 AM</span>
+</div>
+</div>
+</div>
+<!-- 5. Automated Confirmation -->
+<div class="flex flex-col items-end max-w-[86%] self-end">
+<div class="bg-primary-fixed/30 text-on-surface p-3.5 rounded-2xl rounded-tr-sm shadow-sm space-y-1.5">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[15px]">smart_toy</span>
+<span class="font-label-sm uppercase tracking-wider text-[10px] font-bold">FEFCO Bot</span>
+</div>
+<p class="font-body-md text-on-surface leading-relaxed">
+          Your phone consultation is confirmed for <strong class="font-bold">Thu 12 Nov, 4:00 PM</strong> with Senior Tech Zaid M.
+        </p>
+<div class="flex items-center justify-end gap-1">
+<span class="font-label-sm text-on-surface-variant text-[10px]">9:43 AM</span>
+<span class="material-symbols-outlined text-[15px] text-sky-500 font-bold">done_all</span>
+</div>
+</div>
+</div>
+<!-- 6. Automated 24h Reminder -->
+<div class="flex flex-col items-end max-w-[86%] self-end">
+<div class="bg-primary-fixed/30 text-on-surface p-3.5 rounded-2xl rounded-tr-sm shadow-sm space-y-1.5">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[15px]">notifications</span>
+<span class="font-label-sm uppercase tracking-wider text-[10px] font-bold">Reminder Bot</span>
+</div>
+<p class="font-body-md text-on-surface leading-relaxed">
+          Reminder: your consultation is tomorrow at 4:00 PM. Our engineer will call you on this WhatsApp number.
+        </p>
+<div class="flex items-center justify-end gap-1">
+<span class="font-label-sm text-on-surface-variant text-[10px]">10:05 AM</span>
+<span class="material-symbols-outlined text-[15px] text-sky-500 font-bold">done_all</span>
+</div>
+</div>
+</div>
+<!-- 7. Customer Change Request -->
+<div class="flex flex-col items-start max-w-[85%] self-start">
+<div class="bg-surface-container-lowest text-on-surface p-3.5 rounded-2xl rounded-tl-sm shadow-sm space-y-1">
+<p class="font-body-md text-on-surface leading-relaxed">
+          Can we make it 5 pm? My husband gets home by then.
+        </p>
+<div class="flex items-center justify-end">
+<span class="font-label-sm text-on-surface-variant text-[10px]">10:14 AM</span>
+</div>
+</div>
+</div>
+<!-- 8. Human Operator Takeover Response -->
+<div class="flex flex-col items-end max-w-[86%] self-end">
+<div class="bg-primary-fixed/40 text-on-surface p-3.5 rounded-2xl rounded-tr-sm shadow-sm space-y-1">
+<div class="flex items-center justify-between pb-0.5">
+<span class="font-label-sm font-bold text-on-primary-fixed-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">support_agent</span>
+            Tariq (Dispatch Admin)
+          </span>
+</div>
+<p class="font-body-md text-on-surface leading-relaxed">
+          Checking Zaid's schedule for 5:00 PM slot right now Priya, one moment please!
+        </p>
+<div class="flex items-center justify-end gap-1">
+<span class="font-label-sm text-on-surface-variant text-[10px]">10:15 AM</span>
+<span class="material-symbols-outlined text-[15px] text-outline">check</span>
+</div>
+</div>
+</div>
+<!-- 9. Failed Message / Retry Alert -->
+<div class="flex flex-col items-end max-w-[86%] self-end">
+<div class="bg-error-container/50 text-on-error-container p-3 rounded-2xl rounded-tr-sm shadow-sm space-y-1 w-full">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-1.5 text-error font-label-md">
+<span class="material-symbols-outlined text-[16px]">error</span>
+<span class="font-semibold">SMS update dispatch attempt failed</span>
+</div>
+<span class="font-label-sm text-on-surface-variant text-[10px]">10:16 AM</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-body-sm text-on-surface-variant">Provider gateway timed out</span>
+<button class="inline-flex items-center gap-1 font-label-sm text-error font-bold hover:underline active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[14px]">replay</span>
+            Failed — retry
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Composer Floating Dock -->
+<div class="sticky bottom-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md pt-2 pb-3 px-margin shadow-[0_-2px_12px_rgba(0,0,0,0.05)]">
+<!-- Quick Reply Suggestions / Action Presets -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container-high active:bg-primary/20 text-on-surface font-label-sm flex items-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-[15px] text-primary">add_link</span>
+        + Send booking link
+      </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container-high active:bg-primary/20 text-on-surface font-label-sm flex items-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-[15px] text-secondary">update</span>
+        Reschedule
+      </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container-high active:bg-primary/20 text-on-surface font-label-sm flex items-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-[15px] text-tertiary">receipt_long</span>
+        Share price list
+      </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container-high active:bg-primary/20 text-on-surface font-label-sm flex items-center gap-1 transition-all" type="button">
+<span class="material-symbols-outlined text-[15px] text-primary">location_on</span>
+        Send tech location
+      </button>
+</div>
+<!-- Active Input Bar -->
+<div class="flex items-center gap-2 pt-1">
+<!-- Attachment Quick Tool -->
+<button aria-label="Add attachment" class="w-11 h-11 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center hover:bg-surface-container-highest active:scale-95 transition-all shrink-0" type="button">
+<span class="material-symbols-outlined text-[22px]">add</span>
+</button>
+<!-- Main Input Field -->
+<div class="flex-1 min-h-[46px] bg-surface-container-low rounded-2xl px-3.5 py-2 flex items-center gap-2 shadow-xs focus-within:ring-2 focus-within:ring-primary-container">
+<input class="w-full bg-transparent border-none outline-none font-body-md text-on-surface placeholder:text-on-surface-variant/70" placeholder="Type a message or note..." type="text"/>
+<button aria-label="Add voice note" class="text-on-surface-variant hover:text-primary active:scale-95 transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+</div>
+<!-- Sunny Orange Primary Action Send Trigger -->
+<button aria-label="Send message" class="w-11 h-11 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-md active:bg-primary hover:brightness-105 active:scale-95 transition-all shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px] translate-x-0.5">send</span>
+</button>
+</div>
+</div>
+</div></main>

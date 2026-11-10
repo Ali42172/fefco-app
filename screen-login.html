@@ -1,0 +1,141 @@
+<main class="flex-1 flex flex-col relative w-full bg-surface"><div class="flex flex-col w-full relative overflow-hidden select-none">
+<!-- Soft Sunlit Ambient Glow (Dubai Morning Sun Tone) -->
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-80 rounded-full bg-gradient-to-b from-[#FFF3D6] via-[#FFF8E7]/60 to-transparent blur-3xl pointer-events-none -z-10"></div>
+<!-- Decorative Solar Ray Accent (Subtle Architectural Geometry) -->
+<div class="absolute top-2 right-4 w-28 h-28 rounded-full bg-secondary-container/10 blur-2xl pointer-events-none -z-10"></div>
+<div class="w-full max-w-md mx-auto px-gutter flex flex-col justify-between py-space-xl">
+<!-- Centered Brand Block -->
+<header class="flex flex-col items-center text-center pt-space-md pb-space-sm">
+<div class="relative flex items-center justify-center w-24 h-20 mb-space-sm transition-transform active:scale-95 duration-200">
+<div class="absolute inset-0 bg-primary-container/15 rounded-full blur-xl scale-75"></div>
+<img alt="FEFCO Solutions Logo" class="relative w-24 h-auto max-h-16 object-contain drop-shadow-sm" loading="eager" src="./logo.png"/>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container mb-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-tertiary tracking-wide uppercase">Dubai Operations Hub</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-extrabold">
+        FEFCO SOLUTIONS
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[260px] leading-snug mt-1">
+        Leads, calls &amp; bookings in one place
+      </p>
+</header>
+<!-- Main Clean Card -->
+<section class="mt-space-md w-full bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm">
+<form class="flex flex-col gap-space-md" id="fefco-login-form" onsubmit="event.preventDefault(); return false;">
+<!-- Work Email Field -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center justify-between" for="email-input">
+<span>Work email</span>
+<span class="text-[11px] text-tertiary font-label-sm">Authorized UAE Staff</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-lg pointer-events-none">mail</span>
+<input autocomplete="email" class="w-full min-h-[48px] pl-10 pr-3.5 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none transition-all duration-150" id="email-input" placeholder="name@fefco.ae" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="password-input">
+            Password
+          </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-lg pointer-events-none">lock</span>
+<input autocomplete="current-password" class="w-full min-h-[48px] pl-10 pr-11 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none transition-all duration-150" id="password-input" placeholder="••••••••" required="" type="password"/>
+<button aria-label="Toggle password visibility" class="absolute right-1 w-10 h-10 flex items-center justify-center text-outline hover:text-on-surface active:scale-95 transition-colors rounded-lg" id="toggle-password-btn" type="button">
+<span class="material-symbols-outlined text-lg" id="eye-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Utilities Row: Remember Me & Forgot Password -->
+<div class="flex items-center justify-between pt-1">
+<!-- Tactile Toggle Switch -->
+<label class="relative inline-flex items-center gap-2.5 cursor-pointer select-none">
+<input checked="" class="sr-only peer" id="remember-me-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:shadow-sm peer-checked:bg-tertiary-container transition-colors"></div>
+<span class="font-label-md text-label-md text-on-surface">Remember me</span>
+</label>
+<!-- Forgot Password Link -->
+<button class="font-label-currency text-label-currency text-[#1B7DB5] hover:underline active:opacity-75 transition-opacity" onclick="handleForgotPassword()" type="button">
+            Forgot password?
+          </button>
+</div>
+<!-- Primary Action Button -->
+<button class="w-full min-h-[48px] mt-2 py-3 px-space-md rounded-xl bg-primary-container text-on-secondary font-label-lg text-label-lg shadow-sm hover:brightness-95 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group cursor-pointer" id="signin-btn" type="submit">
+<span>Sign in</span>
+<span class="material-symbols-outlined text-lg group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+</form>
+<!-- Admin Provisioning Note -->
+<div class="mt-space-md pt-space-xs text-center">
+<p class="font-body-sm text-body-sm text-outline flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm align-middle">verified_user</span>
+<span>Team access only — ask the admin for an account</span>
+</p>
+</div>
+</section>
+<!-- Operational Status Pill -->
+<div class="mt-space-lg flex justify-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm shadow-none">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>v2.4.0 (PWA) · GST Synced</span>
+</div>
+</div>
+<!-- Footprint / Copyright Footer -->
+<footer class="text-center pt-space-sm pb-space-xs">
+<p class="font-body-sm text-body-sm text-outline">
+        FEFCO Solutions · Dubai, UAE
+      </p>
+</footer>
+</div>
+</div>
+<script>
+  // Password Visibility Toggle Interaction
+  const passwordInput = document.getElementById('password-input');
+  const togglePasswordBtn = document.getElementById('toggle-password-btn');
+  const eyeIcon = document.getElementById('eye-icon');
+
+  if (togglePasswordBtn && passwordInput && eyeIcon) {
+    togglePasswordBtn.addEventListener('click', () => {
+      const isPassword = passwordInput.getAttribute('type') === 'password';
+      passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+      eyeIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+    });
+  }
+
+  // Micro-interaction Feedback for Login Button
+  const signinBtn = document.getElementById('signin-btn');
+  const loginForm = document.getElementById('fefco-login-form');
+
+  if (loginForm && signinBtn) {
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const originalHTML = signinBtn.innerHTML;
+      
+      // Temporary optimistic visual feedback
+      signinBtn.innerHTML = `
+        <span class="material-symbols-outlined animate-spin text-lg">progress_activity</span>
+        <span>Verifying GST Session...</span>
+      `;
+      signinBtn.setAttribute('disabled', 'true');
+      signinBtn.classList.add('opacity-90');
+
+      setTimeout(() => {
+        signinBtn.innerHTML = `
+          <span class="material-symbols-outlined text-lg">check_circle</span>
+          <span>Connected</span>
+        `;
+        setTimeout(() => {
+          signinBtn.innerHTML = originalHTML;
+          signinBtn.removeAttribute('disabled');
+          signinBtn.classList.remove('opacity-90');
+        }, 1200);
+      }, 900);
+    });
+  }
+
+  function handleForgotPassword() {
+    alert("Please notify your FEFCO Operations Supervisor via WhatsApp to reset your Dubai Field access key.");
+  }
+</script></main>

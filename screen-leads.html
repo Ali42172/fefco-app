@@ -1,0 +1,379 @@
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="FEFCO Solutions Logo" class="h-8 w-auto object-contain shrink-0" src="./logo.png"/><div class="flex flex-col truncate"><span class="font-label-sm text-on-surface-variant uppercase tracking-wider leading-none">FEFCO SOLUTIONS</span><h1 class="font-headline-sm text-on-surface truncate">Lead Management</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><span class="hidden xs:inline-flex items-center px-space-sm py-0.5 rounded-full font-label-sm bg-surface-container-low text-on-surface border border-outline-variant/30">Dubai 10:42 AM</span><span class="inline-flex items-center px-space-xs py-0.5 rounded-full font-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold leading-none">TEST</span><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 min-w-[16px] h-4 px-1 rounded-full bg-primary-container text-on-primary font-label-sm flex items-center justify-center text-[10px] leading-none font-bold">3</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full relative">
+<!-- Leads Header Bar -->
+<div class="px-margin pt-space-xs pb-space-xs flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Leads</h2>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant">
+        248
+      </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Sort Leads" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">swap_vert</span>
+</button>
+<button aria-label="Export Data" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Real-time KPI Glance Pill -->
+<div class="px-margin mb-space-sm">
+<div class="flex items-center justify-between bg-surface-container-low px-space-md py-space-xs rounded-xl">
+<div class="flex items-center gap-space-xs text-on-tertiary-container">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-sm text-label-sm">Active Inbound Queue</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dubai GST • Auto-sync</span>
+</div>
+</div>
+<!-- Search Input Container -->
+<div class="px-margin mb-space-sm">
+<div class="bg-surface-container-lowest rounded-xl px-space-md py-2.5 flex items-center gap-space-sm shadow-[0_2px_8px_rgba(31,41,55,0.04)]">
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0">search</span>
+<input class="w-full bg-transparent font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none" id="lead-search-input" placeholder="Search name, phone or area..." type="search"/>
+<button aria-label="Refine Filters" class="w-8 h-8 rounded-lg flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Horizontal Filter Chips Row -->
+<div class="px-margin mb-space-sm flex items-center gap-space-xs overflow-x-auto" style="-ms-overflow-style:none; scrollbar-width:none;">
+<button class="shrink-0 font-label-md text-label-md px-space-md py-1.5 rounded-full flex items-center gap-1 bg-surface-container-lowest text-on-surface shadow-sm" type="button">
+<span>Source</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</button>
+<button class="shrink-0 font-label-md text-label-md px-space-md py-1.5 rounded-full flex items-center gap-1 bg-surface-container-lowest text-on-surface shadow-sm" type="button">
+<span>Service</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</button>
+<button class="shrink-0 font-label-md text-label-md px-space-md py-1.5 rounded-full flex items-center gap-1 bg-surface-container-lowest text-on-surface shadow-sm" type="button">
+<span>Area</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</button>
+<button class="shrink-0 font-label-md text-label-md px-space-md py-1.5 rounded-full flex items-center gap-1 bg-surface-container-lowest text-on-surface shadow-sm" type="button">
+<span>Status</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</button>
+<button class="shrink-0 font-label-md text-label-md px-space-md py-1.5 rounded-full flex items-center gap-1 bg-primary-fixed text-on-primary-fixed-variant shadow-sm font-bold" type="button">
+<span>Date: Today</span>
+<span class="material-symbols-outlined text-[16px] text-on-primary-fixed-variant">close</span>
+</button>
+</div>
+<!-- Status Segment Tabs -->
+<div class="px-margin mb-space-md flex gap-space-xs overflow-x-auto" style="-ms-overflow-style:none; scrollbar-width:none;">
+<button class="shrink-0 font-label-sm text-label-sm px-3.5 py-2 rounded-xl bg-primary-container text-on-primary font-bold shadow-[0_2px_8px_rgba(255,138,0,0.25)] flex items-center gap-1" type="button">
+<span>All</span>
+<span class="opacity-90">(248)</span>
+</button>
+<button class="shrink-0 font-label-sm text-label-sm px-3 py-2 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm flex items-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-tint"></span>
+<span>New</span>
+<span class="text-on-surface-variant font-bold">(12)</span>
+</button>
+<button class="shrink-0 font-label-sm text-label-sm px-3 py-2 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm flex items-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>Booked</span>
+<span class="text-on-surface-variant font-bold">(9)</span>
+</button>
+<button class="shrink-0 font-label-sm text-label-sm px-3 py-2 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm flex items-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Attended</span>
+<span class="text-on-surface-variant font-bold">(30)</span>
+</button>
+<button class="shrink-0 font-label-sm text-label-sm px-3 py-2 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm flex items-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>Missed</span>
+<span class="text-on-surface-variant font-bold">(4)</span>
+</button>
+</div>
+<!-- Lead Cards List -->
+<div class="px-margin space-y-space-md pb-24">
+<!-- Card 1: Ahmed Al Mansoori (Booked) -->
+<div class="lead-card bg-surface-container-lowest rounded-xl p-space-md shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] transition-all active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center font-headline-sm text-headline-sm shrink-0">
+            AM
+          </div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Ahmed Al Mansoori</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Arabian Ranches · Solar panel cleaning</p>
+</div>
+</div>
+<span class="shrink-0 inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant">
+          Booked
+        </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-space-xs pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[13px]">call</span>
+            Call ad · 2521
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dubai Villa 4B</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">10:12 AM</span>
+</div>
+<!-- AI Summary Box -->
+<div class="bg-surface-container-low p-2.5 rounded-lg mt-space-xs flex items-start gap-space-xs">
+<span class="text-base leading-none shrink-0 mt-0.5">🤖</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<span class="font-label-md text-label-md text-on-primary-fixed-variant">AI Dispatch:</span> 24 panels, wants cleaning this week, budget ~AED 400
+        </p>
+</div>
+<!-- Quick Action Tray -->
+<div class="flex items-center justify-end gap-space-xs mt-space-sm pt-space-xs">
+<button class="h-9 px-3 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+          WhatsApp
+        </button>
+<button class="h-9 px-3 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">call</span>
+          Dial Client
+        </button>
+</div>
+</div>
+<!-- Card 2: Priya Nair (Attended) -->
+<div class="lead-card bg-surface-container-lowest rounded-xl p-space-md shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] transition-all active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center font-headline-sm text-headline-sm shrink-0">
+            PN
+          </div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Priya Nair</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Jumeirah Islands · Solar water heater check</p>
+</div>
+</div>
+<span class="shrink-0 inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant">
+          Attended
+        </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-space-xs pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[13px]">forum</span>
+            WhatsApp ad · 786
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cluster 7</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">09:48 AM</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg mt-space-xs flex items-start gap-space-xs">
+<span class="text-base leading-none shrink-0 mt-0.5">🤖</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<span class="font-label-md text-label-md text-tertiary">AI Dispatch:</span> Water heater leaking valve, urgent morning inspection booked
+        </p>
+</div>
+<div class="flex items-center justify-end gap-space-xs mt-space-sm pt-space-xs">
+<button class="h-9 px-3 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+          View Report
+        </button>
+</div>
+</div>
+<!-- Card 3: James Carter (Contacted) -->
+<div class="lead-card bg-surface-container-lowest rounded-xl p-space-md shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] transition-all active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-headline-sm text-headline-sm shrink-0">
+            JC
+          </div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">James Carter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Emirates Hills · Water tank &amp; plumbing AMC</p>
+</div>
+</div>
+<span class="shrink-0 inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant">
+          Contacted
+        </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-space-xs pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-label-sm text-label-sm bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px]">assignment</span>
+            Instant Form
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sector P</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">09:15 AM</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg mt-space-xs flex items-start gap-space-xs">
+<span class="text-base leading-none shrink-0 mt-0.5">🤖</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<span class="font-label-md text-label-md text-secondary">AI Dispatch:</span> 2 large rooftop tanks, requested annual maintenance quote
+        </p>
+</div>
+<div class="flex items-center justify-end gap-space-xs mt-space-sm pt-space-xs">
+<button class="h-9 px-3 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">request_quote</span>
+          Send Estimate
+        </button>
+<button class="h-9 px-3 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">call</span>
+          Follow Up
+        </button>
+</div>
+</div>
+<!-- Card 4: Fatima Khan (New) -->
+<div class="lead-card bg-surface-container-lowest rounded-xl p-space-md shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] transition-all active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-headline-sm text-headline-sm shrink-0">
+            FK
+          </div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Fatima Khan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">The Springs · Solar panel cleaning &amp; repair</p>
+</div>
+</div>
+<span class="shrink-0 inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-highest text-on-surface-variant font-bold">
+          New
+        </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-space-xs pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-label-sm text-label-sm bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px]">language</span>
+            Website
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Springs 11</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">08:50 AM</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg mt-space-xs flex items-start gap-space-xs">
+<span class="text-base leading-none shrink-0 mt-0.5">🤖</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<span class="font-label-md text-label-md text-primary-container">AI Dispatch:</span> 18 panels with bird mess, inverter flashing code E-04
+        </p>
+</div>
+<div class="flex items-center justify-end gap-space-xs mt-space-sm pt-space-xs">
+<button class="h-9 px-3 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+          Schedule Visit
+        </button>
+<button class="h-9 px-3 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">call</span>
+          Claim Lead
+        </button>
+</div>
+</div>
+<!-- Card 5: Rohan Mehta (Missed) -->
+<div class="lead-card bg-surface-container-lowest rounded-xl p-space-md shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] transition-all active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-headline-sm text-headline-sm shrink-0">
+            RM
+          </div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Rohan Mehta</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">The Meadows · Solar maintenance</p>
+</div>
+</div>
+<span class="shrink-0 inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-error-container text-on-error-container">
+          Missed
+        </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-space-xs pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[13px]">phone_missed</span>
+            Call ad · 2521
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Meadows 2</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">08:12 AM</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg mt-space-xs flex items-start gap-space-xs">
+<span class="text-base leading-none shrink-0 mt-0.5">🤖</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<span class="font-label-md text-label-md text-error">AI Dispatch:</span> Called twice, no answer. Automated SMS callback sent
+        </p>
+</div>
+<div class="flex items-center justify-end gap-space-xs mt-space-sm pt-space-xs">
+<button class="h-9 px-3 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">sms</span>
+          Resend SMS
+        </button>
+<button class="h-9 px-3 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">phone_forwarded</span>
+          Call Back
+        </button>
+</div>
+</div>
+<!-- Card 6: Sultan Al Zaabi (Rescheduled) -->
+<div class="lead-card bg-surface-container-lowest rounded-xl p-space-md shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] transition-all active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-headline-sm text-headline-sm shrink-0">
+            SA
+          </div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Sultan Al Zaabi</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Jumeirah Park · Water heater replacement</p>
+</div>
+</div>
+<span class="shrink-0 inline-flex items-center px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant">
+          Rescheduled
+        </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-space-xs pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-label-sm text-label-sm bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px]">assignment</span>
+            Instant Form
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Package 3</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Yesterday</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg mt-space-xs flex items-start gap-space-xs">
+<span class="text-base leading-none shrink-0 mt-0.5">🤖</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<span class="font-label-md text-label-md text-on-surface-variant">AI Dispatch:</span> Requested moving appointment to Thursday afternoon
+        </p>
+</div>
+<div class="flex items-center justify-end gap-space-xs mt-space-sm pt-space-xs">
+<button class="h-9 px-3 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+          Confirm Thu Slot
+        </button>
+</div>
+</div>
+</div>
+<!-- Floating Action Button for Quick Lead Creation -->
+<button aria-label="Create New Lead" class="fixed bottom-20 right-4 w-14 h-14 bg-primary-container text-on-primary rounded-full shadow-[0_8px_30px_-4px_rgba(255,138,0,0.35),0_4px_12px_rgba(31,41,55,0.12)] flex items-center justify-center text-3xl font-extrabold hover:bg-on-primary-fixed-variant active:scale-90 transition-all z-20" id="quick-add-lead-btn" type="button">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+</div>
+<script>
+  // Simple quick filter interaction for demonstration & tactile feedback
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('lead-search-input');
+    const cards = document.querySelectorAll('.lead-card');
+    
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (text.includes(query)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    const fab = document.getElementById('quick-add-lead-btn');
+    if (fab) {
+      fab.addEventListener('click', () => {
+        fab.classList.add('rotate-90');
+        setTimeout(() => {
+          fab.classList.remove('rotate-90');
+        }, 250);
+      });
+    }
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_20px_rgba(255,138,0,0.05)]" data-active-classes="text-primary-container font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-[10px]">Home</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 transition-colors text-primary-container font-bold" data-path="lead-management" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-sm text-[10px]">Leads</span></a><a class="relative flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="inbox-communications" href="#"><span class="material-symbols-outlined text-[22px]">chat</span><span class="font-label-sm text-[10px]">Inbox</span><span class="absolute top-1.5 right-[28%] w-2 h-2 rounded-full bg-primary-container"></span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="booking-schedule" href="#"><span class="material-symbols-outlined text-[22px]">calendar_today</span><span class="font-label-sm text-[10px]">Bookings</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="more-menu" href="#"><span class="material-symbols-outlined text-[22px]">more_horiz</span><span class="font-label-sm text-[10px]">More</span></a></div></nav>

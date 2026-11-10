@@ -1,0 +1,346 @@
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Go Back" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface hover:bg-surface-container active:scale-95 transition-all" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="FEFCO Solutions Logo" class="h-8 w-auto object-contain shrink-0" src="./logo.png"/><h1 class="font-headline-sm text-on-surface truncate">Leads Filter Bottom Sheet</h1></div><div class="flex items-center gap-space-xs shrink-0"><span class="hidden xs:inline-flex items-center px-space-sm py-0.5 rounded-full font-label-sm bg-surface-container-low text-on-surface border border-outline-variant/30">Dubai 10:42 AM</span><span class="inline-flex items-center px-space-xs py-0.5 rounded-full font-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold leading-none">TEST MODE</span><button aria-label="More options" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">more_vert</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface"><div class="flex flex-col w-full relative min-h-[780px] overflow-hidden">
+<!-- Semi-visible background: Field Operations Leads Dashboard under Dubai Sun -->
+<div class="w-full px-margin pt-space-md space-y-space-md opacity-35 select-none pointer-events-none filter blur-[1px]">
+<!-- Search and metrics row behind sheet -->
+<div class="flex items-center justify-between gap-space-sm bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md">
+<span class="material-symbols-outlined text-[20px] text-primary">search</span>
+<span>Search villas, phone, or tags...</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold font-label-sm">
+        37
+      </div>
+</div>
+<!-- Lead Card 1 (Sample in backdrop) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-on-surface">Arabian Ranches III · Villa 42</span>
+<span class="px-space-sm py-0.5 rounded-full font-label-sm bg-secondary-fixed text-on-secondary-fixed">Booked</span>
+</div>
+<p class="font-body-sm text-on-surface-variant">Full Solar Array Deep Clean &amp; Inverter Inspection</p>
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-on-surface-variant">
+<span>GST 11:30 AM · Tariq K.</span>
+<span class="font-label-currency text-primary">AED 680</span>
+</div>
+</div>
+<!-- Lead Card 2 (Sample in backdrop) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-on-surface">Jumeirah Islands · Cluster 8</span>
+<span class="px-space-sm py-0.5 rounded-full font-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant">Attended</span>
+</div>
+<p class="font-body-sm text-on-surface-variant">Water Tank Sterilization + Pressure Balancing</p>
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-on-surface-variant">
+<span>GST 01:15 PM · Zayan M.</span>
+<span class="font-label-currency text-primary">AED 1,250</span>
+</div>
+</div>
+<!-- Visual summary tile -->
+<div class="bg-surface-container p-space-md rounded-xl">
+<div class="font-label-md text-on-surface-variant">Total Pipeline Value Today</div>
+<div class="font-kpi-metric-sm text-primary">AED 14,820</div>
+</div>
+</div>
+<!-- Warm Scrim Overlay (Light ambient grey/warm tint, strictly avoiding dark pitch blacks) -->
+<div class="absolute inset-0 bg-[#1F2937]/35 backdrop-blur-[2px] transition-opacity duration-300 z-10 flex flex-col justify-end">
+<!-- Bottom Sheet Container -->
+<div class="w-full bg-surface-container-lowest rounded-t-[24px] shadow-[0_-8px_30px_rgba(255,138,0,0.12),0_-4px_16px_rgba(31,41,55,0.08)] flex flex-col max-h-[777px] overflow-hidden transform transition-all duration-300">
+<!-- Drag Handle & Tactile Indicator -->
+<div class="w-full flex justify-center pt-space-sm pb-space-xs cursor-grab active:cursor-grabbing">
+<div class="w-12 h-1.5 rounded-full bg-surface-variant"></div>
+</div>
+<!-- Header Row -->
+<div class="px-margin pt-space-xs pb-space-md flex items-center justify-between bg-surface-container-lowest shrink-0">
+<div class="flex items-baseline gap-space-xs">
+<h2 class="font-headline-md text-on-surface">Filter leads</h2>
+<span class="font-label-sm text-primary font-bold bg-primary-fixed/40 px-2 py-0.5 rounded-full" id="activeCountBadge">(3 active)</span>
+</div>
+<button class="h-11 px-space-sm inline-flex items-center justify-center font-label-lg text-primary-container hover:opacity-80 active:scale-95 transition-transform" id="resetFiltersBtn" type="button">
+          Reset
+        </button>
+</div>
+<!-- Scrollable Filter Content Body -->
+<div class="flex-1 overflow-y-auto px-margin space-y-space-lg pb-space-xl">
+<!-- 1. Source Group -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-on-surface-variant uppercase tracking-wider">Lead Source</label>
+<span class="font-label-sm text-outline">Multi-select</span>
+</div>
+<div class="flex flex-wrap gap-[10px]">
+<!-- Selected Pill -->
+<button class="filter-chip is-selected min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-primary-fixed/30 text-on-primary-container shadow-sm transition-all" data-category="source" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">check</span>
+<span>Call ad · 2521</span>
+</button>
+<!-- Selected Pill -->
+<button class="filter-chip is-selected min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-primary-fixed/30 text-on-primary-container shadow-sm transition-all" data-category="source" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">check</span>
+<span>Instant Form</span>
+</button>
+<!-- Unselected Pills -->
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="source" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>WhatsApp ad · 786</span>
+</button>
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="source" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>Website</span>
+</button>
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="source" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>Answered by Sara</span>
+</button>
+</div>
+</section>
+<!-- 2. Service Group -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-on-surface-variant uppercase tracking-wider">Service Scope</label>
+<span class="font-label-sm text-outline">Residential &amp; Commercial</span>
+</div>
+<div class="flex flex-wrap gap-[10px]">
+<!-- Selected -->
+<button class="filter-chip is-selected min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-primary-fixed/30 text-on-primary-container shadow-sm transition-all" data-category="service" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">check</span>
+<span>Solar panel cleaning</span>
+</button>
+<!-- Unselected options -->
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="service" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>Solar maintenance &amp; repair</span>
+</button>
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="service" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>Solar water heater</span>
+</button>
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="service" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>Water tank</span>
+</button>
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="service" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>Plumbing</span>
+</button>
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="service" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>AMC contract</span>
+</button>
+</div>
+</section>
+<!-- 3. Area Group -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-on-surface-variant uppercase tracking-wider">Villa Community / Area</label>
+<span class="font-label-sm text-outline">Dubai Zones</span>
+</div>
+<div class="flex flex-wrap gap-[10px]">
+<!-- Selected -->
+<button class="filter-chip is-selected min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-primary-fixed/30 text-on-primary-container shadow-sm transition-all" data-category="area" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">check</span>
+<span>Arabian Ranches</span>
+</button>
+<!-- Unselected -->
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="area" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>Jumeirah Islands</span>
+</button>
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="area" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>Emirates Hills</span>
+</button>
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="area" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>The Springs</span>
+</button>
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="area" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>The Meadows</span>
+</button>
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="area" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>Jumeirah Park</span>
+</button>
+<button class="filter-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" data-category="area" type="button">
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+<span>Other Dubai Areas</span>
+</button>
+</div>
+</section>
+<!-- 4. Status Group (Authentic 8 FEFCO Design System States) -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-on-surface-variant uppercase tracking-wider">Lead Status (GST Workflow)</label>
+<span class="font-label-sm text-outline">8 states</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- New: Sky blue tint -->
+<button class="status-chip min-h-[44px] px-space-md rounded-full flex items-center justify-between font-label-sm bg-surface-container-high text-primary hover:opacity-90 transition-all" data-status="new" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>New</span>
+</span>
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</button>
+<!-- Contacted: Yellow tint -->
+<button class="status-chip min-h-[44px] px-space-md rounded-full flex items-center justify-between font-label-sm bg-secondary-fixed/50 text-secondary hover:opacity-90 transition-all" data-status="contacted" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Contacted</span>
+</span>
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</button>
+<!-- Booked: Selected state with orange tint + check -->
+<button class="status-chip is-selected min-h-[44px] px-space-md rounded-full flex items-center justify-between font-label-sm bg-primary-fixed/40 text-on-primary-container shadow-sm transition-all" data-status="booked" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-bold">Booked</span>
+</span>
+<span class="material-symbols-outlined text-[18px] text-primary-container" style="font-variation-settings: 'FILL' 1;">check</span>
+</button>
+<!-- Attended: Green tint -->
+<button class="status-chip min-h-[44px] px-space-md rounded-full flex items-center justify-between font-label-sm bg-tertiary-fixed/40 text-on-tertiary-fixed-variant hover:opacity-90 transition-all" data-status="attended" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Attended</span>
+</span>
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</button>
+<!-- Missed: Coral/Error tint -->
+<button class="status-chip min-h-[44px] px-space-md rounded-full flex items-center justify-between font-label-sm bg-error-container text-on-error-container hover:opacity-90 transition-all" data-status="missed" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Missed</span>
+</span>
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</button>
+<!-- Rescheduled: Lavender tint -->
+<button class="status-chip min-h-[44px] px-space-md rounded-full flex items-center justify-between font-label-sm bg-surface-variant text-on-surface hover:opacity-90 transition-all" data-status="rescheduled" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span>Rescheduled</span>
+</span>
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</button>
+<!-- Won: Dark green tint -->
+<button class="status-chip min-h-[44px] px-space-md rounded-full flex items-center justify-between font-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant font-bold hover:opacity-90 transition-all" data-status="won" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Won</span>
+</span>
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</button>
+<!-- Lost: Subtle neutral tint -->
+<button class="status-chip min-h-[44px] px-space-md rounded-full flex items-center justify-between font-label-sm bg-surface-container text-on-surface-variant hover:opacity-90 transition-all" data-status="lost" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span>Lost</span>
+</span>
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</button>
+</div>
+</section>
+<!-- 5. Date Range Group -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-on-surface-variant uppercase tracking-wider">Date Range</label>
+<span class="font-label-sm text-primary font-bold">GST Standard Time</span>
+</div>
+<div class="flex flex-wrap gap-[10px]">
+<!-- Selected -->
+<button class="date-chip is-selected min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-primary-fixed/30 text-on-primary-container shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">check</span>
+<span>Today</span>
+</button>
+<button class="date-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" type="button">
+<span>Yesterday</span>
+</button>
+<button class="date-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" type="button">
+<span>7 days</span>
+</button>
+<button class="date-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" type="button">
+<span>30 days</span>
+</button>
+<button class="date-chip min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-all" type="button">
+<span>Custom range</span>
+</button>
+</div>
+<!-- Compact Custom Date Inputs Row -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex items-center justify-between shadow-sm min-h-[48px]">
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-outline">From</span>
+<span class="font-label-md text-on-surface truncate">10 Nov 2026</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-primary-container shrink-0">calendar_today</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex items-center justify-between shadow-sm min-h-[48px]">
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-outline">To</span>
+<span class="font-label-md text-on-surface truncate">10 Nov 2026</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-primary-container shrink-0">event</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky Bottom CTA Bar -->
+<div class="p-margin bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(0,0,0,0.03)] shrink-0">
+<button class="w-full h-12 bg-primary-container hover:bg-primary-container/90 active:scale-[0.98] transition-all rounded-xl text-on-primary font-headline-sm flex items-center justify-center gap-space-xs shadow-[0_4px_16px_rgba(255,138,0,0.24)]" id="applyFiltersBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+<span>Show 37 leads</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interactions for toggling pills and dynamic active counter
+  (function initBottomSheet() {
+    const chips = document.querySelectorAll('.filter-chip, .status-chip, .date-chip');
+    const badge = document.getElementById('activeCountBadge');
+    const resetBtn = document.getElementById('resetFiltersBtn');
+
+    function updateCount() {
+      const activeCount = document.querySelectorAll('.is-selected').length;
+      if (badge) {
+        badge.textContent = `(${activeCount} active)`;
+      }
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const isSelected = chip.classList.contains('is-selected');
+        const checkIcon = chip.querySelector('.material-symbols-outlined');
+
+        if (isSelected) {
+          chip.classList.remove('is-selected', 'bg-primary-fixed/30', 'text-on-primary-container', 'shadow-sm');
+          chip.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          if (checkIcon) {
+            checkIcon.classList.add('hidden');
+          }
+        } else {
+          chip.classList.add('is-selected', 'bg-primary-fixed/30', 'text-on-primary-container', 'shadow-sm');
+          chip.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+          if (checkIcon) {
+            checkIcon.classList.remove('hidden');
+            checkIcon.classList.add('text-primary-container');
+          }
+        }
+        updateCount();
+      });
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        chips.forEach(chip => {
+          chip.classList.remove('is-selected', 'bg-primary-fixed/30', 'text-on-primary-container', 'shadow-sm');
+          chip.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          const checkIcon = chip.querySelector('.material-symbols-outlined');
+          if (checkIcon) checkIcon.classList.add('hidden');
+        });
+        updateCount();
+      });
+    }
+  })();
+</script></main>

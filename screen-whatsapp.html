@@ -1,0 +1,296 @@
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="FEFCO Solutions Logo" class="h-8 w-auto object-contain shrink-0" src="./logo.png"/><div class="flex flex-col truncate"><span class="font-label-sm text-on-surface-variant uppercase tracking-wider leading-none">FEFCO SOLUTIONS</span><h1 class="font-headline-sm text-on-surface truncate">Whatsapp Conversations — Fefco Leads</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><span class="hidden xs:inline-flex items-center px-space-sm py-0.5 rounded-full font-label-sm bg-surface-container-low text-on-surface border border-outline-variant/30">Dubai 10:42 AM</span><span class="inline-flex items-center px-space-xs py-0.5 rounded-full font-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold leading-none">TEST MODE</span><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 min-w-[16px] h-4 px-1 rounded-full bg-primary-container text-on-primary font-label-sm flex items-center justify-center text-[10px] leading-none font-bold">3</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full pb-6">
+<!-- Top Segmented Control (Calls vs WhatsApp) -->
+<div class="px-margin pt-space-sm pb-space-xs">
+<div class="p-1 rounded-xl bg-surface-container flex items-center justify-between shadow-sm">
+<button class="flex-1 py-2.5 rounded-lg flex items-center justify-center gap-1.5 font-label-md text-on-surface-variant hover:text-on-surface transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Calls</span>
+</button>
+<button class="flex-1 py-2.5 rounded-lg flex items-center justify-center gap-1.5 font-label-md text-on-primary bg-primary-container shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="font-bold">WhatsApp</span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest animate-pulse"></span>
+</button>
+</div>
+</div>
+<!-- Search & Quick Action Filter -->
+<div class="px-margin pt-space-xs pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1 flex items-center">
+<span class="absolute left-3.5 text-on-surface-variant material-symbols-outlined text-[20px] pointer-events-none">search</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/60 font-body-md shadow-sm outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" placeholder="Search chats, villas, phones..." type="text"/>
+</div>
+<button aria-label="Toggle chat filters" class="w-11 h-11 rounded-xl bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-primary-container shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Horizontally Scrollable Filter Chips -->
+<div class="w-full overflow-x-auto no-scrollbar pl-margin pr-margin pb-space-sm flex items-center gap-space-xs">
+<!-- Filter: All -->
+<button class="shrink-0 h-8 px-3.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm flex items-center gap-1.5 shadow-sm" type="button">
+<span>All</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-container text-on-primary text-[10px] font-bold">24</span>
+</button>
+<!-- Filter: Needs Reply -->
+<button class="shrink-0 h-8 px-3.5 rounded-full bg-surface-container-lowest text-on-surface font-label-sm flex items-center gap-1.5 shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span>Needs reply</span>
+<span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary text-[10px] font-bold">3</span>
+</button>
+<!-- Filter: Bot only -->
+<button class="shrink-0 h-8 px-3.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm flex items-center gap-1.5 shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px] text-secondary">smart_toy</span>
+<span>Bot only</span>
+</button>
+<!-- Filter: Unread -->
+<button class="shrink-0 h-8 px-3.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm flex items-center gap-1.5 shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span>Unread</span>
+</button>
+<!-- Filter: Escalated -->
+<button class="shrink-0 h-8 px-3.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm flex items-center gap-1.5 shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span>VIP AMC</span>
+</button>
+</div>
+<!-- Operational Health Micro-Banner -->
+<div class="px-margin mb-space-sm">
+<div class="px-3.5 py-2.5 rounded-xl bg-surface-container-low flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2 min-w-0">
+<span class="relative flex h-2.5 w-2.5 shrink-0">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary"></span>
+</span>
+<span class="font-body-sm text-on-surface truncate">Dubai WhatsApp Gateway online • <strong class="font-bold">Avg response 4m</strong></span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-tertiary shrink-0">verified</span>
+</div>
+</div>
+<!-- WhatsApp Conversation List (7 Items) -->
+<div class="px-margin flex flex-col gap-space-xs">
+<!-- Row 1: Priya Nair -->
+<div class="w-full p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:scale-[0.99] flex items-start gap-3" role="button" tabindex="0">
+<!-- Avatar with Green/Teal accent -->
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-headline-sm font-bold shadow-inner">
+          PN
+        </div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary-container shadow-sm"></span>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-headline-sm text-on-surface truncate font-bold">Priya Nair</span>
+<span class="font-label-sm text-tertiary-container shrink-0 font-bold">10:14 AM</span>
+</div>
+<!-- Last Message & Unread Badge -->
+<div class="flex items-center justify-between gap-2 mt-0.5">
+<p class="font-body-md font-semibold text-on-surface truncate">Can we make it 5 pm?</p>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-primary font-label-sm text-[11px] font-bold shrink-0 shadow-sm">2</span>
+</div>
+<!-- Meta Line: Chip & Routing -->
+<div class="flex items-center justify-between mt-2 pt-1.5 bg-surface-container-low/50 -mx-1 px-2 rounded-lg">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sim_card</span>
+            via 786
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-container font-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+            Booked
+          </span>
+</div>
+</div>
+</div>
+<!-- Row 2: Ahmed Al Mansoori -->
+<div class="w-full p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:scale-[0.99] flex items-start gap-3" role="button" tabindex="0">
+<!-- Avatar with Warm Orange accent -->
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-headline-sm font-bold shadow-inner">
+          AM
+        </div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-secondary-container shadow-sm flex items-center justify-center text-[8px] text-on-secondary-container font-bold">A</span>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-headline-sm text-on-surface truncate font-semibold">Ahmed Al Mansoori</span>
+<!-- Bot Tag -->
+<span class="px-1.5 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px] flex items-center gap-0.5 shrink-0">
+<span class="material-symbols-outlined text-[11px]">smart_toy</span>
+              Bot
+            </span>
+</div>
+<span class="font-label-sm text-on-surface-variant shrink-0">09:45 AM</span>
+</div>
+<p class="font-body-sm text-on-surface-variant truncate mt-0.5">Booking confirmed: Site visit Wed 11 Nov 10:00 AM</p>
+<!-- Meta Line -->
+<div class="flex items-center justify-between mt-2 pt-1.5 bg-surface-container-low/50 -mx-1 px-2 rounded-lg">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">api</span>
+            via API number
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-container font-label-sm font-bold">
+            Booked
+          </span>
+</div>
+</div>
+</div>
+<!-- Row 3: Fatima Khan -->
+<div class="w-full p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:scale-[0.99] flex items-start gap-3" role="button" tabindex="0">
+<!-- Avatar with Soft Yellow/Amber accent -->
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-headline-sm font-bold shadow-inner">
+          FK
+        </div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary-container shadow-sm"></span>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-headline-sm text-on-surface truncate font-bold">Fatima Khan</span>
+<span class="font-label-sm text-tertiary-container shrink-0 font-bold">09:12 AM</span>
+</div>
+<div class="flex items-center justify-between gap-2 mt-0.5">
+<p class="font-body-md font-semibold text-on-surface truncate">I sent photos of the inverter flashing E-04</p>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-primary font-label-sm text-[11px] font-bold shrink-0 shadow-sm">1</span>
+</div>
+<!-- Meta Line -->
+<div class="flex items-center justify-between mt-2 pt-1.5 bg-surface-container-low/50 -mx-1 px-2 rounded-lg">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">api</span>
+            via API number
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-primary-fixed-variant font-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">fiber_new</span>
+            New
+          </span>
+</div>
+</div>
+</div>
+<!-- Row 4: James Carter -->
+<div class="w-full p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:scale-[0.99] flex items-start gap-3" role="button" tabindex="0">
+<!-- Avatar with Soft Sky Blue accent -->
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-headline-sm font-bold shadow-inner">
+          JC
+        </div>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-headline-sm text-on-surface truncate font-semibold">James Carter</span>
+<span class="font-label-sm text-on-surface-variant shrink-0">08:50 AM</span>
+</div>
+<p class="font-body-sm text-on-surface-variant truncate mt-0.5">Thanks, received the plumbing AMC quote. Will check.</p>
+<!-- Meta Line -->
+<div class="flex items-center justify-between mt-2 pt-1.5 bg-surface-container-low/50 -mx-1 px-2 rounded-lg">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sim_card</span>
+            via 786
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm font-bold">
+            Contacted
+          </span>
+</div>
+</div>
+</div>
+<!-- Row 5: Rohan Mehta -->
+<div class="w-full p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:scale-[0.99] flex items-start gap-3" role="button" tabindex="0">
+<!-- Avatar with Coral/Red tint -->
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-headline-sm font-bold shadow-inner">
+          RM
+        </div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-error text-on-error shadow-sm flex items-center justify-center text-[9px]">!</span>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-headline-sm text-on-surface truncate font-semibold">Rohan Mehta</span>
+<!-- Bot Tag -->
+<span class="px-1.5 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px] flex items-center gap-0.5 shrink-0">
+<span class="material-symbols-outlined text-[11px]">smart_toy</span>
+              Bot
+            </span>
+</div>
+<span class="font-label-sm text-on-surface-variant shrink-0">08:15 AM</span>
+</div>
+<p class="font-body-sm text-on-surface-variant truncate mt-0.5">Automatic follow-up: We tried calling you regarding your solar repair request.</p>
+<!-- Meta Line -->
+<div class="flex items-center justify-between mt-2 pt-1.5 bg-surface-container-low/50 -mx-1 px-2 rounded-lg">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">phone_forwarded</span>
+            via 2521
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">phone_missed</span>
+            Missed
+          </span>
+</div>
+</div>
+</div>
+<!-- Row 6: Sultan Al Zaabi -->
+<div class="w-full p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:scale-[0.99] flex items-start gap-3" role="button" tabindex="0">
+<!-- Avatar with Lavender/Purple accent -->
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-surface-container-high text-on-primary-fixed-variant flex items-center justify-center font-headline-sm font-bold shadow-inner">
+          SA
+        </div>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-headline-sm text-on-surface truncate font-semibold">Sultan Al Zaabi</span>
+<span class="font-label-sm text-on-surface-variant shrink-0">Yesterday</span>
+</div>
+<p class="font-body-sm text-on-surface-variant truncate mt-0.5">Requested moving visit to Thursday afternoon</p>
+<!-- Meta Line -->
+<div class="flex items-center justify-between mt-2 pt-1.5 bg-surface-container-low/50 -mx-1 px-2 rounded-lg">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sim_card</span>
+            via 786
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-variant text-on-surface font-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">update</span>
+            Rescheduled
+          </span>
+</div>
+</div>
+</div>
+<!-- Row 7: Tariq Al Hashimi -->
+<div class="w-full p-3.5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:scale-[0.99] flex items-start gap-3" role="button" tabindex="0">
+<!-- Avatar with Soft Green accent -->
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-headline-sm font-bold shadow-inner">
+          TH
+        </div>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-headline-sm text-on-surface truncate font-semibold">Tariq Al Hashimi</span>
+<span class="font-label-sm text-on-surface-variant shrink-0">Yesterday</span>
+</div>
+<p class="font-body-sm text-on-surface-variant truncate mt-0.5">Villa 84, Emirates Hills - gate code shared with security.</p>
+<!-- Meta Line -->
+<div class="flex items-center justify-between mt-2 pt-1.5 bg-surface-container-low/50 -mx-1 px-2 rounded-lg">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">api</span>
+            via API number
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-container font-label-sm font-bold">
+            Booked
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Quick WhatsApp Broadcast Trigger -->
+<div class="fixed bottom-20 right-4 z-40">
+<button aria-label="Start new WhatsApp chat" class="h-12 px-4 rounded-full bg-primary-container text-on-primary font-label-md font-bold shadow-lg flex items-center gap-2 active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">add_comment</span>
+<span>New Chat</span>
+</button>
+</div>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_20px_rgba(255,138,0,0.05)]" data-active-classes="text-primary-container font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-[10px]">Home</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="lead-management" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-sm text-[10px]">Leads</span></a><a class="relative flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="inbox-communications" href="#"><span class="material-symbols-outlined text-[22px]">chat</span><span class="font-label-sm text-[10px]">Inbox</span><span class="absolute top-1.5 right-[28%] w-2 h-2 rounded-full bg-primary-container"></span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="booking-schedule" href="#"><span class="material-symbols-outlined text-[22px]">calendar_today</span><span class="font-label-sm text-[10px]">Bookings</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="more-menu" href="#"><span class="material-symbols-outlined text-[22px]">more_horiz</span><span class="font-label-sm text-[10px]">More</span></a></div></nav>

@@ -1,0 +1,359 @@
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="FEFCO Solutions Logo" class="h-8 w-auto object-contain shrink-0" src="./logo.png"/><div class="flex flex-col truncate"><span class="font-label-sm text-on-surface-variant uppercase tracking-wider leading-none">FEFCO SOLUTIONS</span><h1 class="font-headline-sm text-on-surface truncate">Bookings — Fefco Leads</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><span class="hidden xs:inline-flex items-center px-space-sm py-0.5 rounded-full font-label-sm bg-surface-container-low text-on-surface border border-outline-variant/30">Dubai 10:42 AM</span><span class="inline-flex items-center px-space-xs py-0.5 rounded-full font-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold leading-none">TEST MODE</span><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 min-w-[16px] h-4 px-1 rounded-full bg-primary-container text-on-primary font-label-sm flex items-center justify-center text-[10px] leading-none font-bold">3</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- View Toggle Segmented Control -->
+<div class="px-margin pt-space-md">
+<div class="p-1 rounded-xl bg-surface-container-high/60 flex items-center shadow-inner">
+<button class="flex-1 py-2 px-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-label-md flex items-center justify-center gap-1.5 shadow-sm transition-all" type="button">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+        Today
+      </button>
+<button class="flex-1 py-2 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface font-label-md flex items-center justify-center gap-1.5 transition-all" type="button">
+        Week
+      </button>
+</div>
+</div>
+<!-- Weekly Horizontal Strip -->
+<div class="px-margin pt-space-md">
+<div class="flex items-center justify-between gap-1 overflow-x-auto no-scrollbar py-1">
+<!-- Mon 9 -->
+<button class="flex flex-col items-center justify-center min-w-[42px] py-2 rounded-xl hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-on-surface-variant">Mon</span>
+<span class="font-headline-sm text-on-surface mt-0.5">9</span>
+<div class="flex items-center gap-0.5 mt-1.5 h-1.5">
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+</div>
+</button>
+<!-- Tue 10 (Today) -->
+<button class="flex flex-col items-center justify-center min-w-[46px] py-2 px-1 rounded-xl bg-primary-container text-on-primary shadow-[0_4px_14px_rgba(255,138,0,0.35)] relative scale-105">
+<span class="font-label-sm text-on-primary/90 font-bold uppercase tracking-wider text-[10px]">Today</span>
+<span class="font-headline-sm font-bold text-on-primary mt-0.5">10</span>
+<div class="flex items-center gap-0.5 mt-1.5 h-1.5">
+<span class="w-1 h-1 rounded-full bg-surface-container-lowest"></span>
+<span class="w-1 h-1 rounded-full bg-surface-container-lowest"></span>
+<span class="w-1 h-1 rounded-full bg-surface-container-lowest"></span>
+<span class="w-1 h-1 rounded-full bg-surface-container-lowest"></span>
+<span class="w-1 h-1 rounded-full bg-surface-container-lowest"></span>
+<span class="w-1 h-1 rounded-full bg-surface-container-lowest"></span>
+</div>
+</button>
+<!-- Wed 11 -->
+<button class="flex flex-col items-center justify-center min-w-[42px] py-2 rounded-xl hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-on-surface-variant">Wed</span>
+<span class="font-headline-sm text-on-surface mt-0.5">11</span>
+<div class="flex items-center gap-0.5 mt-1.5 h-1.5">
+<span class="w-1 h-1 rounded-full bg-primary-container/60"></span>
+<span class="w-1 h-1 rounded-full bg-primary-container/60"></span>
+<span class="w-1 h-1 rounded-full bg-primary-container/60"></span>
+<span class="w-1 h-1 rounded-full bg-primary-container/60"></span>
+<span class="w-1 h-1 rounded-full bg-primary-container/60"></span>
+</div>
+</button>
+<!-- Thu 12 -->
+<button class="flex flex-col items-center justify-center min-w-[42px] py-2 rounded-xl hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-on-surface-variant">Thu</span>
+<span class="font-headline-sm text-on-surface mt-0.5">12</span>
+<div class="flex items-center gap-0.5 mt-1.5 h-1.5">
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+</div>
+</button>
+<!-- Fri 13 -->
+<button class="flex flex-col items-center justify-center min-w-[42px] py-2 rounded-xl hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-on-surface-variant">Fri</span>
+<span class="font-headline-sm text-on-surface mt-0.5">13</span>
+<div class="flex items-center gap-0.5 mt-1.5 h-1.5">
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+</div>
+</button>
+<!-- Sat 14 -->
+<button class="flex flex-col items-center justify-center min-w-[42px] py-2 rounded-xl hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-on-surface-variant">Sat</span>
+<span class="font-headline-sm text-on-surface mt-0.5">14</span>
+<div class="flex items-center gap-0.5 mt-1.5 h-1.5">
+<span class="w-1 h-1 rounded-full bg-primary-container/60"></span>
+<span class="w-1 h-1 rounded-full bg-primary-container/60"></span>
+<span class="w-1 h-1 rounded-full bg-primary-container/60"></span>
+<span class="w-1 h-1 rounded-full bg-primary-container/60"></span>
+</div>
+</button>
+<!-- Sun 15 -->
+<button class="flex flex-col items-center justify-center min-w-[42px] py-2 rounded-xl hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-on-surface-variant">Sun</span>
+<span class="font-headline-sm text-on-surface mt-0.5">15</span>
+<div class="flex items-center gap-0.5 mt-1.5 h-1.5">
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+</div>
+</button>
+</div>
+</div>
+<!-- Summary Row Chips -->
+<div class="px-margin pt-space-sm flex items-center gap-space-xs overflow-x-auto no-scrollbar">
+<div class="px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm flex items-center gap-1.5 shrink-0">
+<span class="w-2 h-2 rounded-full bg-on-surface"></span>
+<span class="font-label-md text-on-surface font-bold">6 bookings</span>
+</div>
+<div class="px-3 py-1.5 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant shadow-sm flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[15px]">location_on</span>
+<span class="font-label-md font-semibold">4 site visits</span>
+</div>
+<div class="px-3 py-1.5 rounded-full bg-surface-container-high text-tertiary-container shadow-sm flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[15px]">call</span>
+<span class="font-label-md font-semibold text-secondary">2 phone consults</span>
+</div>
+</div>
+<!-- Calendar Sync Banner -->
+<div class="px-margin pt-space-sm">
+<div class="flex items-center justify-between py-1.5 px-3 rounded-lg bg-surface-container-low/70">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Synced with Google Calendar</span>
+</div>
+<span class="font-label-sm text-[11px] text-outline font-medium">10:40 AM GST</span>
+</div>
+</div>
+<!-- Timeline Cards Section -->
+<div class="px-margin pt-space-md flex flex-col gap-space-md">
+<!-- Card 1 -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] flex flex-col gap-space-sm transition-all hover:translate-y-[-1px]">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[18px]">schedule</span>
+<span class="font-label-lg font-bold text-on-surface">10:00 – 11:00 AM</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm bg-primary-fixed/60 text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[13px]">location_on</span>
+          Site visit
+        </span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-on-surface font-bold">Ahmed Al Mansoori</h2>
+<span class="font-label-sm text-primary-container font-semibold">AED 680</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-0.5">
+          Arabian Ranches III · Villa 114 — <span class="text-on-surface font-medium">Solar panel cleaning (24 panels)</span>
+</p>
+</div>
+<!-- Assigned Crew -->
+<div class="flex items-center justify-between py-1 px-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-container/20 text-on-primary-container font-label-sm flex items-center justify-center font-bold">
+            RA
+          </div>
+<span class="font-label-sm text-on-surface font-semibold">Team Alpha (Rashid &amp; Farooq)</span>
+</div>
+<span class="material-symbols-outlined text-primary-container text-[18px]">electric_bolt</span>
+</div>
+<!-- Reminders State -->
+<div class="flex items-center gap-1.5 text-on-tertiary-container font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>WhatsApp 24h sent · Call 1h scheduled</span>
+</div>
+<!-- Action Buttons Row -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<button class="min-h-[44px] px-2 rounded-xl bg-tertiary text-on-tertiary font-label-md flex items-center justify-center gap-1 shadow-sm active:opacity-90" type="button">
+<span class="material-symbols-outlined text-[18px]">done</span>
+          Attended
+        </button>
+<button class="min-h-[44px] px-2 rounded-xl bg-error-container/60 text-error font-label-md flex items-center justify-center gap-1 active:bg-error-container" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+          Missed
+        </button>
+<button class="min-h-[44px] px-2 rounded-xl bg-surface-container text-on-surface-variant font-label-md flex items-center justify-center gap-1 active:bg-surface-container-high" type="button">
+<span class="material-symbols-outlined text-[18px]">update</span>
+          Reschedule
+        </button>
+</div>
+</div>
+<!-- Card 2: Already Attended -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] flex flex-col gap-space-sm opacity-95">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+<span class="font-label-lg font-bold text-on-surface">11:30 AM – 12:30 PM</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm bg-primary-fixed/60 text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[13px]">location_on</span>
+          Site visit
+        </span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-on-surface font-bold">Priya Nair</h2>
+<p class="font-body-sm text-on-surface-variant mt-0.5">
+          Jumeirah Islands · Cluster 4 — <span class="text-on-surface font-medium">Solar water heater inspection</span>
+</p>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm flex items-center justify-center font-bold">
+          ZM
+        </div>
+<span class="font-body-sm text-on-surface-variant">Zaid M. (Tech Lead)</span>
+</div>
+<!-- Attended Banner across card -->
+<div class="flex items-center gap-2 p-2.5 rounded-xl bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-md mt-1">
+<span class="material-symbols-outlined text-[18px] text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Attended at 11:28 AM · Report logged in Odoo</span>
+</div>
+</div>
+<!-- Card 3: Phone Consultation -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[18px]">schedule</span>
+<span class="font-label-lg font-bold text-on-surface">02:15 – 02:45 PM</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px]">call</span>
+          Phone consult
+        </span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-on-surface font-bold">James Carter</h2>
+<span class="font-label-sm text-secondary font-semibold">AMC Renewal</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-0.5">
+          Emirates Hills · Sector E — <span class="text-on-surface font-medium">Water tank &amp; plumbing AMC</span>
+</p>
+</div>
+<div class="flex items-center justify-between py-1 px-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container font-label-sm flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[15px]">smart_toy</span>
+</div>
+<span class="font-label-sm text-on-surface font-medium">Sara (AI Receptionist)</span>
+</div>
+<span class="font-label-sm text-outline">Outbound Call</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">notifications_active</span>
+<span>WhatsApp reminder scheduled 1:15 PM</span>
+</div>
+<!-- Action Buttons Row -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<button class="min-h-[44px] px-2 rounded-xl bg-tertiary text-on-tertiary font-label-md flex items-center justify-center gap-1 shadow-sm active:opacity-90" type="button">
+<span class="material-symbols-outlined text-[18px]">call</span>
+          Attended
+        </button>
+<button class="min-h-[44px] px-2 rounded-xl bg-error-container/60 text-error font-label-md flex items-center justify-center gap-1 active:bg-error-container" type="button">
+<span class="material-symbols-outlined text-[18px]">phone_missed</span>
+          Missed
+        </button>
+<button class="min-h-[44px] px-2 rounded-xl bg-surface-container text-on-surface-variant font-label-md flex items-center justify-center gap-1 active:bg-surface-container-high" type="button">
+<span class="material-symbols-outlined text-[18px]">update</span>
+          Reschedule
+        </button>
+</div>
+</div>
+<!-- Card 4: Marked Missed -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+<span class="font-label-lg font-bold text-on-surface">03:30 – 04:30 PM</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm bg-primary-fixed/60 text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[13px]">location_on</span>
+          Site visit
+        </span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-on-surface font-bold">Rohan Mehta</h2>
+<span class="px-2 py-0.5 rounded-full font-label-sm bg-error-container text-on-error-container font-semibold">
+            Missed
+          </span>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-0.5">
+          The Meadows · Meadows 2 — <span class="text-on-surface font-medium">Inverter diagnostic</span>
+</p>
+</div>
+<!-- Missed Cause Pill -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-error-container/40 text-error font-label-sm">
+<span class="material-symbols-outlined text-[15px]">report_problem</span>
+<span>Missed — Client unreachable at security gate</span>
+</div>
+<!-- Rebook Action strip -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-secondary-fixed/50 text-on-secondary-fixed font-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">autorenew</span>
+<span>Rebook caller scheduled 4:00 PM via AI agent</span>
+</div>
+</div>
+<button class="w-full min-h-[44px] rounded-xl bg-primary-fixed text-on-primary-fixed-variant font-label-md flex items-center justify-center gap-2 active:bg-primary-container active:text-on-primary transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">phone_forwarded</span>
+        Retry Callback Now
+      </button>
+</div>
+<!-- Card 5: Upcoming Confirmed -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[18px]">schedule</span>
+<span class="font-label-lg font-bold text-on-surface">05:00 – 06:00 PM</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm bg-primary-fixed/60 text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[13px]">location_on</span>
+          Site visit
+        </span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-on-surface font-bold">Fatima Khan</h2>
+<span class="font-label-sm text-primary-container font-semibold">AED 520</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-0.5">
+          The Springs · Springs 11 — <span class="text-on-surface font-medium">18 panels deep clean</span>
+</p>
+</div>
+<div class="flex items-center justify-between py-1 px-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-fixed-dim text-on-primary-fixed-variant font-label-sm flex items-center justify-center font-bold">
+            TB
+          </div>
+<span class="font-label-sm text-on-surface font-semibold">Team Beta (Ali &amp; Karim)</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-tertiary-container font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">task_alt</span>
+<span>WhatsApp 24h sent · Confirmed by client</span>
+</div>
+<!-- Action Buttons Row -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<button class="min-h-[44px] px-2 rounded-xl bg-tertiary text-on-tertiary font-label-md flex items-center justify-center gap-1 shadow-sm active:opacity-90" type="button">
+<span class="material-symbols-outlined text-[18px]">done</span>
+          Attended
+        </button>
+<button class="min-h-[44px] px-2 rounded-xl bg-error-container/60 text-error font-label-md flex items-center justify-center gap-1 active:bg-error-container" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+          Missed
+        </button>
+<button class="min-h-[44px] px-2 rounded-xl bg-surface-container text-on-surface-variant font-label-md flex items-center justify-center gap-1 active:bg-surface-container-high" type="button">
+<span class="material-symbols-outlined text-[18px]">update</span>
+          Reschedule
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Highlight active tab indicator in shell nav
+  document.addEventListener('DOMContentLoaded', () => {
+    const bookingNav = document.querySelector('nav a[data-path="booking-schedule"]');
+    if (bookingNav) {
+      bookingNav.classList.remove('text-on-surface-variant');
+      bookingNav.classList.add('text-primary-container', 'font-bold');
+      const icon = bookingNav.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.style.fontVariationSettings = "'FILL' 1";
+      }
+    }
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_20px_rgba(255,138,0,0.05)]" data-active-classes="text-primary-container font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-[10px]">Home</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="lead-management" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-sm text-[10px]">Leads</span></a><a class="relative flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="inbox-communications" href="#"><span class="material-symbols-outlined text-[22px]">chat</span><span class="font-label-sm text-[10px]">Inbox</span><span class="absolute top-1.5 right-[28%] w-2 h-2 rounded-full bg-primary-container"></span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="booking-schedule" href="#"><span class="material-symbols-outlined text-[22px]">calendar_today</span><span class="font-label-sm text-[10px]">Bookings</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="more-menu" href="#"><span class="material-symbols-outlined text-[22px]">more_horiz</span><span class="font-label-sm text-[10px]">More</span></a></div></nav>

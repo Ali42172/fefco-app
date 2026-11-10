@@ -1,0 +1,187 @@
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="FEFCO Solutions Logo" class="h-8 w-auto object-contain shrink-0" src="./logo.png"/><div class="flex flex-col truncate"><span class="font-label-sm text-on-surface-variant uppercase tracking-wider leading-none">FEFCO SOLUTIONS</span><h1 class="font-headline-sm text-on-surface truncate">More Menu</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><span class="hidden xs:inline-flex items-center px-space-sm py-0.5 rounded-full font-label-sm bg-surface-container-low text-on-surface border border-outline-variant/30">Dubai 10:42 AM</span><span class="inline-flex items-center px-space-xs py-0.5 rounded-full font-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold leading-none">TEST MODE</span><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 min-w-[16px] h-4 px-1 rounded-full bg-primary-container text-on-primary font-label-sm flex items-center justify-center text-[10px] leading-none font-bold">3</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full px-margin pb-6 gap-space-lg">
+<!-- Interactive Feedback Pill (Hidden default) -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 transform -translate-y-12 opacity-0 pointer-events-none transition-all duration-300 ease-out bg-surface-container-lowest text-on-surface shadow-xl rounded-full px-4 py-2 flex items-center gap-2" id="toastNotification">
+<span class="material-symbols-outlined text-primary-container text-[18px]">verified</span>
+<span class="font-label-md text-on-surface" id="toastMessage">PWA installation prompt initialized</span>
+</div>
+<!-- User Profile Card -->
+<section class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-primary-fixed/20 pointer-events-none blur-2xl"></div>
+<div class="flex items-center gap-space-md relative z-10">
+<div class="relative shrink-0">
+<div class="w-14 h-14 rounded-full overflow-hidden shadow-sm bg-surface-container-high flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of Tariq K., an approachable Middle Eastern operational business owner in modern smart-casual linen shirt with sunny, warm ambient lighting reflecting Dubai villa lifestyle and clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAswgo4emN_czarEyNDpMc8PvqeCwu7Wa9FOeEmyfu-IC_3BiFBtKZpvAG0KlT80uufgy_sBqwy-j0uO7J5l_ex4DWd3LC0uRIN6PBGADik_a_y-TAX3sqnc8VSJKtyZtxRz6zNKTfxDT4wybasyn7OOU0uS-hivZDYBxHWVB-IJUOE3Dn8Max4QLIiufQ6x_6fqGxFaj0bxf18AghWnnN9-arTU5VIgGtluEJRprfu"/>
+</div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary shadow-sm"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<h2 class="font-headline-sm text-on-surface truncate">Tariq K.</h2>
+<span class="font-label-sm text-on-surface-variant">(Owner)</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm bg-surface-container-low text-primary font-bold">Admin</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary shrink-0 animate-pulse"></span>
+<span class="font-body-sm text-on-surface-variant truncate">Signed in · Dubai (GST)</span>
+</div>
+</div>
+<button aria-label="Quick profile switch" class="w-11 h-11 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors active:scale-95 shrink-0" type="button">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</button>
+</div>
+</section>
+<!-- 2x2 Grid of Large Rounded Tiles -->
+<section class="grid grid-cols-2 gap-space-md">
+<!-- Tile 1: AI Agents -->
+<button class="flex flex-col text-left p-space-md bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] hover:bg-surface-container-lowest/90 active:scale-[0.98] transition-all min-h-[136px] justify-between group" onclick="showQuickToast('AI Agents dashboard opening...')" type="button">
+<div class="flex items-start justify-between w-full">
+<div class="w-11 h-11 rounded-xl bg-primary-fixed flex items-center justify-center text-primary-container shadow-sm group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-[24px]">smart_toy</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-tertiary mt-1"></span>
+</div>
+<div>
+<h3 class="font-headline-sm text-on-surface font-bold">AI Agents</h3>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-label-md text-tertiary font-bold">4 of 5 on</span>
+</div>
+</div>
+</button>
+<!-- Tile 2: Ads -->
+<button class="flex flex-col text-left p-space-md bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] hover:bg-surface-container-lowest/90 active:scale-[0.98] transition-all min-h-[136px] justify-between group" onclick="showQuickToast('Opening Meta &amp; Google Ads overview')" type="button">
+<div class="flex items-start justify-between w-full">
+<div class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-[24px]">campaign</span>
+</div>
+<span class="font-label-sm text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded">Meta</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-on-surface font-bold">Ads</h3>
+<p class="font-label-md text-on-surface-variant truncate">AED 40 today · 3 live</p>
+</div>
+</button>
+<!-- Tile 3: Reminders & Alerts -->
+<button class="flex flex-col text-left p-space-md bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] hover:bg-surface-container-lowest/90 active:scale-[0.98] transition-all min-h-[136px] justify-between group" onclick="showQuickToast('1 pending reminder reviewed')" type="button">
+<div class="flex items-start justify-between w-full">
+<div class="w-11 h-11 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-[24px]">notifications_active</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm bg-primary-fixed text-primary font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+          1 alert
+        </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-on-surface font-bold">Reminders</h3>
+<p class="font-label-md text-on-surface-variant">1 follow-up pending</p>
+</div>
+</button>
+<!-- Tile 4: Settings -->
+<button class="flex flex-col text-left p-space-md bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] hover:bg-surface-container-lowest/90 active:scale-[0.98] transition-all min-h-[136px] justify-between group" onclick="showQuickToast('Settings preferences loaded')" type="button">
+<div class="flex items-start justify-between w-full">
+<div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-[24px]">tune</span>
+</div>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full font-label-sm bg-secondary-container/30 text-on-secondary-fixed-variant font-bold">
+          Test mode
+        </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-on-surface font-bold">Settings</h3>
+<p class="font-label-md text-on-surface-variant">Sandbox &amp; API Keys</p>
+</div>
+</button>
+</section>
+<!-- Section List Rows Container -->
+<section class="flex flex-col w-full bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_-2px_rgba(255,138,0,0.06),0_2px_8px_rgba(31,41,55,0.04)] overflow-hidden">
+<!-- Row 1: Install app on this phone -->
+<button class="flex items-center justify-between w-full px-space-md py-space-md hover:bg-surface-container-low/60 active:bg-surface-container-low transition-colors text-left min-h-[56px] group" onclick="triggerPwaPrompt()" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed/50 flex items-center justify-center text-primary-container shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]">install_mobile</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-on-surface font-bold truncate">Install app on this phone</span>
+<span class="font-body-sm text-on-surface-variant truncate">Add PWA for quick access &amp; instant alerts</span>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0 ml-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm bg-primary-fixed text-primary font-bold">PWA</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</div>
+</button>
+<div class="h-[1px] w-full bg-surface-container"></div>
+<!-- Row 2: Help & how-to -->
+<button class="flex items-center justify-between w-full px-space-md py-space-md hover:bg-surface-container-low/60 active:bg-surface-container-low transition-colors text-left min-h-[56px] group" onclick="showQuickToast('Opening WhatsApp &amp; AI field tutorials')" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]">contact_support</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-on-surface font-bold truncate">Help &amp; how-to</span>
+<span class="font-body-sm text-on-surface-variant truncate">Guides for AI agents, dispatch &amp; WhatsApp</span>
+</div>
+</div>
+<div class="flex items-center shrink-0 ml-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</div>
+</button>
+<div class="h-[1px] w-full bg-surface-container"></div>
+<!-- Row 3: Sign out -->
+<button class="flex items-center justify-between w-full px-space-md py-space-md hover:bg-error-container/20 active:bg-error-container/40 transition-colors text-left min-h-[56px] group" onclick="confirmSignOut()" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-error-container/40 flex items-center justify-center text-error shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[22px]">logout</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-error font-bold truncate">Sign out</span>
+<span class="font-body-sm text-error/80 truncate">End active GST session on this handset</span>
+</div>
+</div>
+<div class="flex items-center shrink-0 ml-2">
+<span class="material-symbols-outlined text-error/60 text-[20px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</div>
+</button>
+</section>
+<!-- Quick System Insights Mini-Card -->
+<section class="w-full bg-surface-container-low rounded-xl p-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-primary-container text-[20px]">wb_sunny</span>
+<span class="font-label-md text-on-surface-variant truncate">Dubai Solar UV Index: <strong class="text-on-surface">Very High (8.4)</strong></span>
+</div>
+<span class="font-label-sm text-primary font-bold shrink-0">Field Advisory</span>
+</section>
+<!-- Footer Information -->
+<footer class="flex flex-col items-center justify-center text-center pt-2 pb-2">
+<p class="font-label-md text-on-surface-variant leading-relaxed">
+      FEFCO SOLUTIONS v1.0 (PWA) · All times Dubai (GST)<br/>
+<span class="font-body-sm text-on-surface-variant/80">FEFCO Solutions LLC · Licensed in UAE</span>
+</p>
+</footer>
+</div>
+<script>
+  function showQuickToast(msg) {
+    const toast = document.getElementById('toastNotification');
+    const text = document.getElementById('toastMessage');
+    if (!toast || !text) return;
+    text.textContent = msg;
+    toast.classList.remove('opacity-0', '-translate-y-12', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    
+    setTimeout(() => {
+      toast.classList.add('opacity-0', '-translate-y-12', 'pointer-events-none');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 2400);
+  }
+
+  function triggerPwaPrompt() {
+    showQuickToast('Ready! Tap Safari/Chrome share icon & "Add to Home Screen"');
+  }
+
+  function confirmSignOut() {
+    if (confirm('Sign out of FEFCO SOLUTIONS? Active lead queues remain saved in cloud.')) {
+      showQuickToast('Session closed safely. Redirecting...');
+    }
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_20px_rgba(255,138,0,0.05)]" data-active-classes="text-primary-container font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="ads-performance" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-[10px]">Home</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="lead-management" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-sm text-[10px]">Leads</span></a><a class="relative flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="inbox-communications" href="#"><span class="material-symbols-outlined text-[22px]">chat</span><span class="font-label-sm text-[10px]">Inbox</span><span class="absolute top-1.5 right-[28%] w-2 h-2 rounded-full bg-primary-container"></span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="booking-schedule" href="#"><span class="material-symbols-outlined text-[22px]">calendar_today</span><span class="font-label-sm text-[10px]">Bookings</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 transition-colors text-primary-container font-bold" data-path="more-menu" href="#"><span class="material-symbols-outlined text-[22px]">more_horiz</span><span class="font-label-sm text-[10px]">More</span></a></div></nav>

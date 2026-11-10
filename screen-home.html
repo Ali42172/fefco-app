@@ -1,0 +1,445 @@
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="FEFCO Solutions Logo" class="h-8 w-auto object-contain shrink-0" src="./logo.png"/><div class="flex flex-col truncate"><span class="font-label-sm text-on-surface-variant uppercase tracking-wider leading-none">FEFCO SOLUTIONS</span><h1 class="font-headline-sm text-on-surface truncate">Dashboard</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><span class="hidden xs:inline-flex items-center px-space-sm py-0.5 rounded-full font-label-sm bg-surface-container-low text-on-surface border border-outline-variant/30">Dubai 10:42 AM</span><span class="inline-flex items-center px-space-xs py-0.5 rounded-full font-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold leading-none">TEST</span><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 min-w-[16px] h-4 px-1 rounded-full bg-primary-container text-on-primary font-label-sm flex items-center justify-center text-[10px] leading-none font-bold">3</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full pb-6">
+<!-- Greeting Header -->
+<div class="px-margin pt-3 pb-1 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-md text-on-surface">Good morning, Tariq</h2>
+<span class="text-xl animate-bounce">👋</span>
+</div>
+<p class="font-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-primary-container">calendar_today</span>
+        Tue, 10 Nov 2026 · Dubai (GST)
+      </p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary-container shadow-sm">
+<span class="material-symbols-outlined text-[24px]">wb_sunny</span>
+</div>
+</div>
+<!-- Dismissible PWA Banner -->
+<div class="mx-margin my-2.5 bg-secondary-fixed/30 rounded-2xl p-3.5 flex items-center justify-between gap-3 shadow-sm transition-all duration-300" id="pwa-install-banner">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<p class="font-label-sm text-on-secondary-fixed-variant leading-snug truncate">
+        Install FEFCO SOLUTIONS on your phone — fast &amp; direct alerts
+      </p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="bg-primary-container text-on-primary font-label-sm px-3 py-1.5 rounded-lg active:scale-95 transition-transform flex items-center gap-1" onclick="this.closest('#pwa-install-banner').classList.add('hidden')" type="button">
+<span>Install</span>
+<span class="material-symbols-outlined text-[14px]">download</span>
+</button>
+<button aria-label="Dismiss banner" class="w-7 h-7 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container/60 transition-colors" onclick="this.closest('#pwa-install-banner').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Operational Visual Scrim Banner (Dubai Villas Context) -->
+<div class="px-margin py-1">
+<div class="relative w-full h-24 rounded-2xl overflow-hidden shadow-sm bg-surface-container-high flex items-center px-4 justify-between">
+<div class="absolute inset-0 bg-cover bg-center opacity-40" data-alt="A modern luxury villa in Arabian Ranches Dubai on a clear sunny morning with solar panels glistening on roof, high-end photography, warm morning sunlight, crisp architectural detail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAQxwBz4Yo58D_nkf5LCQD3IzWUXp70zUPCTc_xD1CO0r-XEfiARSE7-ELvUyhTkw-P_776OUg20DSAJQ9UZgMJcJo8xHDVlCmUE-R-jJvX5UdkZhZhcuY_DDf_TG9AGjTsP-cYAzLbmzuT7Cn8yx-d5Iq_oFEuJMJBtnHhEo_s5MjPSJK8wOxFf3MA30aVnM0klrV-EQXdS8lu_I6W82_6iXPh-oc5eBcpFcXEjlS_')"></div>
+<div class="relative z-10 max-w-[70%]">
+<span class="font-label-sm uppercase tracking-wider text-primary font-bold px-2 py-0.5 bg-surface-container-lowest/90 rounded-full inline-block mb-1">Villa Ops Active</span>
+<p class="font-label-md text-on-surface">6 Tech Crews dispatched across Emirates Hills &amp; Ranches</p>
+</div>
+<div class="relative z-10 w-11 h-11 rounded-full bg-surface-container-lowest/90 shadow-md flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">solar_power</span>
+</div>
+</div>
+</div>
+<!-- KPI Grid -->
+<div class="px-margin py-2 grid grid-cols-2 gap-3">
+<!-- Card 1: New leads today -->
+<div class="bg-surface-container-lowest p-3.5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="w-9 h-9 rounded-xl bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">person_add</span>
+</div>
+<span class="font-label-sm text-tertiary font-bold flex items-center gap-0.5 bg-tertiary-fixed/20 px-1.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">trending_up</span>+4
+        </span>
+</div>
+<div class="mt-2">
+<span class="font-kpi-metric text-on-surface">12</span>
+<p class="font-label-sm text-on-surface-variant">New leads today</p>
+</div>
+</div>
+<!-- Card 2: Booked -->
+<div class="bg-surface-container-lowest p-3.5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="w-9 h-9 rounded-xl bg-primary-fixed text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">event_available</span>
+</div>
+<span class="font-label-sm text-tertiary font-bold flex items-center gap-0.5 bg-tertiary-fixed/20 px-1.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">trending_up</span>+2
+        </span>
+</div>
+<div class="mt-2">
+<span class="font-kpi-metric text-on-surface">5</span>
+<p class="font-label-sm text-on-surface-variant">Booked today</p>
+</div>
+</div>
+<!-- Card 3: Attended visits -->
+<div class="bg-surface-container-lowest p-3.5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="w-9 h-9 rounded-xl bg-tertiary-fixed/30 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+</div>
+<span class="font-label-sm text-tertiary font-bold px-1.5 py-0.5 rounded-full bg-tertiary-fixed/20">100% on-time</span>
+</div>
+<div class="mt-2">
+<span class="font-kpi-metric text-tertiary">3</span>
+<p class="font-label-sm text-on-surface-variant">Attended visits</p>
+</div>
+</div>
+<!-- Card 4: Missed -->
+<div class="bg-surface-container-lowest p-3.5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="w-9 h-9 rounded-xl bg-error-container text-error flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<span class="font-label-sm text-error font-bold px-1.5 py-0.5 rounded-full bg-error-container/40">Reschedule</span>
+</div>
+<div class="mt-2">
+<span class="font-kpi-metric text-error">1</span>
+<p class="font-label-sm text-on-surface-variant">Missed</p>
+</div>
+</div>
+<!-- Card 5: Show-up rate (Full Width Bento with SVG Progress Ring) -->
+<div class="col-span-2 bg-surface-container-lowest p-4 rounded-2xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-on-surface-variant">Show-up rate</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-kpi-metric text-on-surface">75%</span>
+<span class="font-label-sm text-tertiary font-bold flex items-center">
+<span class="material-symbols-outlined text-[13px]">arrow_upward</span>+8%
+          </span>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-1">9 of 12 scheduled kept this week</p>
+</div>
+<div class="relative w-16 h-16 flex items-center justify-center shrink-0">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 48 48">
+<circle class="text-tertiary-fixed/30" cx="24" cy="24" fill="none" r="19" stroke="currentColor" stroke-width="4.5"></circle>
+<circle class="text-tertiary transition-all duration-1000" cx="24" cy="24" fill="none" r="19" stroke="currentColor" stroke-dasharray="119.38" stroke-dashoffset="29.84" stroke-linecap="round" stroke-width="4.5"></circle>
+</svg>
+<span class="absolute font-label-md font-bold text-on-surface">75%</span>
+</div>
+</div>
+<!-- Card 6: AI calls handled -->
+<div class="bg-surface-container-lowest p-3.5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="w-9 h-9 rounded-xl bg-secondary-fixed/40 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<span class="font-label-sm text-on-surface-variant bg-surface-container-high px-1.5 py-0.5 rounded-full">Avg 2m 41s</span>
+</div>
+<div class="mt-2">
+<span class="font-kpi-metric text-on-surface">18</span>
+<p class="font-label-sm text-on-surface-variant">AI calls handled</p>
+</div>
+</div>
+<!-- Card 7: WhatsApp sent -->
+<div class="bg-surface-container-lowest p-3.5 rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="w-9 h-9 rounded-xl bg-tertiary-fixed/30 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<span class="font-label-sm text-tertiary font-bold bg-tertiary-fixed/20 px-1.5 py-0.5 rounded-full">98% read</span>
+</div>
+<div class="mt-2">
+<span class="font-kpi-metric text-on-surface">46</span>
+<p class="font-label-sm text-on-surface-variant">WhatsApp sent</p>
+</div>
+</div>
+</div>
+<!-- Today's Visits Section -->
+<div class="px-margin mt-4">
+<div class="flex items-center justify-between mb-2.5">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-on-surface font-bold">Today's visits</h3>
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary font-label-sm flex items-center justify-center text-[10px]">5</span>
+</div>
+<a class="font-label-sm text-primary hover:underline flex items-center gap-0.5" href="#">
+<span>See all (5)</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Row 1: Ahmed Al Mansoori -->
+<div class="bg-surface-container-lowest rounded-2xl p-3.5 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-currency px-2 py-0.5 rounded-lg bg-surface-container text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-container">schedule</span>
+              10:00 AM
+            </span>
+<span class="font-label-sm px-2.5 py-0.5 rounded-full bg-primary-fixed text-primary font-bold">Site visit</span>
+</div>
+<span class="font-label-sm px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary font-bold shadow-xs">Booked</span>
+</div>
+<div class="flex items-start justify-between">
+<div>
+<h4 class="font-headline-sm text-on-surface text-[15px]">Ahmed Al Mansoori</h4>
+<p class="font-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-outline">location_on</span>
+              Arabian Ranches III · Villa 114
+            </p>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">solar_power</span>
+</div>
+</div>
+<div class="pt-1.5 flex items-center justify-between text-on-surface-variant font-label-sm bg-surface-container-low/60 rounded-xl px-2.5 py-1.5">
+<span class="truncate">Solar panel cleaning (24 panels)</span>
+<div class="flex items-center gap-1 shrink-0 ml-2">
+<span class="w-6 h-6 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center font-bold text-[10px]">T1</span>
+<span class="text-on-surface text-[11px] font-semibold">Tariq K.</span>
+</div>
+</div>
+</div>
+<!-- Row 2: Priya Nair -->
+<div class="bg-surface-container-lowest rounded-2xl p-3.5 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-currency px-2 py-0.5 rounded-lg bg-surface-container text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">schedule</span>
+              11:30 AM
+            </span>
+<span class="font-label-sm px-2.5 py-0.5 rounded-full bg-primary-fixed text-primary font-bold">Site visit</span>
+</div>
+<span class="font-label-sm px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-bold">Attended</span>
+</div>
+<div class="flex items-start justify-between">
+<div>
+<h4 class="font-headline-sm text-on-surface text-[15px]">Priya Nair</h4>
+<p class="font-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-outline">location_on</span>
+              Jumeirah Islands · Cluster 4
+            </p>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">water_heater</span>
+</div>
+</div>
+<div class="pt-1.5 flex items-center justify-between text-on-surface-variant font-label-sm bg-surface-container-low/60 rounded-xl px-2.5 py-1.5">
+<span class="truncate">Solar water heater check &amp; descaling</span>
+<div class="flex items-center gap-1 shrink-0 ml-2">
+<span class="w-6 h-6 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center font-bold text-[10px]">Z2</span>
+<span class="text-on-surface text-[11px] font-semibold">Zaid M.</span>
+</div>
+</div>
+</div>
+<!-- Row 3: James Carter -->
+<div class="bg-surface-container-lowest rounded-2xl p-3.5 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-currency px-2 py-0.5 rounded-lg bg-surface-container text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">schedule</span>
+              02:15 PM
+            </span>
+<span class="font-label-sm px-2.5 py-0.5 rounded-full bg-surface-variant text-on-surface font-bold">Phone consult</span>
+</div>
+<span class="font-label-sm px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold">Contacted</span>
+</div>
+<div class="flex items-start justify-between">
+<div>
+<h4 class="font-headline-sm text-on-surface text-[15px]">James Carter</h4>
+<p class="font-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-outline">location_on</span>
+              Emirates Hills · Sector E
+            </p>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">plumbing</span>
+</div>
+</div>
+<div class="pt-1.5 flex items-center justify-between text-on-surface-variant font-label-sm bg-surface-container-low/60 rounded-xl px-2.5 py-1.5">
+<span class="truncate">Water tank &amp; plumbing AMC quote</span>
+<div class="flex items-center gap-1 shrink-0 ml-2">
+<span class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-[10px]">AI</span>
+<span class="text-on-surface text-[11px] font-semibold">Sara Agent</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Activity Section -->
+<div class="px-margin mt-5">
+<div class="flex items-center justify-between mb-2.5">
+<h3 class="font-headline-sm text-on-surface font-bold">Live activity</h3>
+<div class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-bold text-[10px] tracking-wider">LIVE</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-3 shadow-sm flex flex-col gap-2">
+<!-- Item 1 -->
+<div class="flex items-center gap-3 p-2 rounded-xl hover:bg-surface-container-low transition-colors">
+<div class="w-9 h-9 rounded-xl bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-sm text-on-surface truncate">
+            Sara (AI) booked a site visit for <span class="font-bold">Ahmed Al Mansoori</span>
+</p>
+<span class="font-body-sm text-on-surface-variant text-[11px]">2 min ago · Automatic Calendar Lock</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-tertiary shrink-0">check_circle</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-3 p-2 rounded-xl hover:bg-surface-container-low transition-colors">
+<div class="w-9 h-9 rounded-xl bg-tertiary-fixed/30 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-sm text-on-surface truncate">
+            WhatsApp reminder read by <span class="font-bold">Priya Nair</span>
+</p>
+<span class="font-body-sm text-on-surface-variant text-[11px]">6 min ago · Status: Confirmed arrival</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-tertiary shrink-0">done_all</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center gap-3 p-2 rounded-xl hover:bg-surface-container-low transition-colors">
+<div class="w-9 h-9 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">assignment</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-sm text-on-surface truncate">
+            New Instant Form lead — <span class="font-bold">Fatima Khan</span>
+</p>
+<span class="font-body-sm text-on-surface-variant text-[11px]">9 min ago · Jumeirah Islands (Solar Clean)</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-primary-container shrink-0"></span>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center gap-3 p-2 rounded-xl hover:bg-surface-container-low transition-colors">
+<div class="w-9 h-9 rounded-xl bg-error-container text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">phone_missed</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-sm text-on-surface truncate">
+            Lead callback: no answer — retry 2:30 PM
+          </p>
+<span class="font-body-sm text-on-surface-variant text-[11px]">15 min ago · Auto-queued for follow-up</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-error shrink-0">schedule</span>
+</div>
+<!-- Item 5 -->
+<div class="flex items-center gap-3 p-2 rounded-xl hover:bg-surface-container-low transition-colors">
+<div class="w-9 h-9 rounded-xl bg-secondary-fixed/40 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-sm text-on-surface truncate">
+            Team alert sent to Vans 2521 and 786
+          </p>
+<span class="font-body-sm text-on-surface-variant text-[11px]">16 min ago · Traffic update Sheikh Zayed Rd</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-outline shrink-0">send</span>
+</div>
+</div>
+</div>
+<!-- Leads By Source Section -->
+<div class="px-margin mt-5 mb-4">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-headline-sm text-on-surface font-bold">Leads by source</h3>
+<!-- Time Range Toggle -->
+<div class="bg-surface-container p-1 rounded-xl flex gap-1 font-label-sm">
+<button class="px-2.5 py-1 rounded-lg bg-primary-container text-on-primary font-bold shadow-xs" type="button">Today</button>
+<button class="px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface" type="button">7d</button>
+<button class="px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface" type="button">30d</button>
+</div>
+</div>
+<!-- Donut Chart & Breakdown Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-sm">
+<div class="flex flex-col items-center justify-center pt-2 pb-4">
+<!-- SVG Donut Chart (Call ad 41%, Instant Form 27%, WhatsApp 22%, Website 10%) -->
+<div class="relative w-40 h-40 flex items-center justify-center">
+<svg class="w-40 h-40 transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background circle -->
+<circle class="text-surface-container" cx="50" cy="50" fill="none" r="38" stroke="currentColor" stroke-width="12"></circle>
+<!-- Segment 1: Call Ad (41% -> dash: 97.9, offset: 0) -->
+<circle cx="50" cy="50" fill="none" r="38" stroke="#ff8a00" stroke-dasharray="97.9 238.8" stroke-dashoffset="0" stroke-width="12"></circle>
+<!-- Segment 2: Instant Form (27% -> dash: 64.5, offset: -97.9) -->
+<circle cx="50" cy="50" fill="none" r="38" stroke="#32bf7c" stroke-dasharray="64.5 238.8" stroke-dashoffset="-97.9" stroke-width="12"></circle>
+<!-- Segment 3: WhatsApp Ad (22% -> dash: 52.5, offset: -162.4) -->
+<circle cx="50" cy="50" fill="none" r="38" stroke="#006d41" stroke-dasharray="52.5 238.8" stroke-dashoffset="-162.4" stroke-width="12"></circle>
+<!-- Segment 4: Website (10% -> dash: 23.9, offset: -214.9) -->
+<circle cx="50" cy="50" fill="none" r="38" stroke="#fec73c" stroke-dasharray="23.9 238.8" stroke-dashoffset="-214.9" stroke-width="12"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-on-surface leading-none">48</span>
+<span class="font-label-sm text-on-surface-variant uppercase tracking-wider text-[10px] mt-0.5">Total Leads</span>
+</div>
+</div>
+</div>
+<!-- Source Legend Grid -->
+<div class="grid grid-cols-2 gap-2.5 pt-2">
+<!-- Call ad -->
+<div class="flex items-center gap-2 p-2 rounded-xl bg-surface-container-low/50">
+<div class="w-3 h-3 rounded-full bg-primary-container shrink-0"></div>
+<div class="min-w-0">
+<p class="font-label-sm text-on-surface truncate">Call ad</p>
+<p class="font-label-currency text-on-surface-variant text-[11px]">41% <span class="text-on-surface font-normal">(20 leads)</span></p>
+</div>
+</div>
+<!-- Instant Form -->
+<div class="flex items-center gap-2 p-2 rounded-xl bg-surface-container-low/50">
+<div class="w-3 h-3 rounded-full bg-tertiary-container shrink-0"></div>
+<div class="min-w-0">
+<p class="font-label-sm text-on-surface truncate">Instant Form</p>
+<p class="font-label-currency text-on-surface-variant text-[11px]">27% <span class="text-on-surface font-normal">(13 leads)</span></p>
+</div>
+</div>
+<!-- WhatsApp ad -->
+<div class="flex items-center gap-2 p-2 rounded-xl bg-surface-container-low/50">
+<div class="w-3 h-3 rounded-full bg-tertiary shrink-0"></div>
+<div class="min-w-0">
+<p class="font-label-sm text-on-surface truncate">WhatsApp ad</p>
+<p class="font-label-currency text-on-surface-variant text-[11px]">22% <span class="text-on-surface font-normal">(11 leads)</span></p>
+</div>
+</div>
+<!-- Website -->
+<div class="flex items-center gap-2 p-2 rounded-xl bg-surface-container-low/50">
+<div class="w-3 h-3 rounded-full bg-secondary-container shrink-0"></div>
+<div class="min-w-0">
+<p class="font-label-sm text-on-surface truncate">Website</p>
+<p class="font-label-currency text-on-surface-variant text-[11px]">10% <span class="text-on-surface font-normal">(4 leads)</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Dubai Field Location Preview Footer Element -->
+<div class="px-margin mb-3">
+<div class="bg-surface-container-lowest rounded-2xl p-3 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">map</span>
+</div>
+<div>
+<span class="font-label-sm font-bold text-on-surface">Dubai Fleet Coverage</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Zone 1: Arabian Ranches · Zone 2: Jumeirah</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for toggle buttons
+  document.querySelectorAll('.px-margin .bg-surface-container button').forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.target.parentElement.querySelectorAll('button').forEach(btn => {
+        btn.classList.remove('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-xs');
+        btn.classList.add('text-on-surface-variant');
+      });
+      e.target.classList.add('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-xs');
+      e.target.classList.remove('text-on-surface-variant');
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_20px_rgba(255,138,0,0.05)]" data-active-classes="text-primary-container font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 transition-colors text-primary-container font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-[10px]">Home</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="lead-management" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-sm text-[10px]">Leads</span></a><a class="relative flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="inbox-communications" href="#"><span class="material-symbols-outlined text-[22px]">chat</span><span class="font-label-sm text-[10px]">Inbox</span><span class="absolute top-1.5 right-[28%] w-2 h-2 rounded-full bg-primary-container"></span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="booking-schedule" href="#"><span class="material-symbols-outlined text-[22px]">calendar_today</span><span class="font-label-sm text-[10px]">Bookings</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-on-surface" data-path="more-menu" href="#"><span class="material-symbols-outlined text-[22px]">more_horiz</span><span class="font-label-sm text-[10px]">More</span></a></div></nav>
