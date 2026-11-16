@@ -7,7 +7,7 @@ var BASE = '.';
 var FILE = window.FEFCO_FILE || function (n) { return './' + n; };
 var TZ = 'Asia/Dubai';
 var POLL_MS = 45000;
-var VERSION = 'v1.2 (14 Nov · work)';
+var VERSION = 'v1.3 (16 Nov · add-lead source)';
 
 /* ---------- storage (works even when the page is sandboxed) ---------- */
 var mem = {};
@@ -162,10 +162,10 @@ function srcInfo(src) {
   var s = String(src || '').toLowerCase();
   if (/web(site)?|site-form|wordpress/.test(s)) return { key: 'website', label: 'Website', icon: 'language', cls: 'bg-secondary-fixed text-on-secondary-fixed' };
   if (/book/.test(s)) return { key: 'booking', label: 'Booking page', icon: 'event_available', cls: 'bg-primary-fixed/50 text-primary' };
-  if (/whatsapp|ctwa|^wa$|^wa[-_]/.test(s)) return { key: 'whatsapp', label: 'WhatsApp ad · 786', icon: 'forum', cls: 'bg-tertiary-fixed text-on-tertiary-fixed-variant' };
+  if (/whatsapp|ctwa|^wa$|^wa[-_]/.test(s)) return { key: 'whatsapp', label: 'WhatsApp ad', icon: 'forum', cls: 'bg-tertiary-fixed text-on-tertiary-fixed-variant' };
   if (/insta|facebook|social|tiktok|^fb|^ig/.test(s)) return { key: 'social', label: /insta|^ig/.test(s) ? 'Instagram' : 'Social DM', icon: 'share', cls: 'bg-surface-container-high text-on-surface-variant' };
   if (/form|instant|leadgen|lead-ad/.test(s)) return { key: 'form', label: 'Instant Form', icon: 'assignment', cls: 'bg-[#2D9CDB]/15 text-[#1B7DB5]' };
-  if (/call|inbound|phone|vapi|2521/.test(s)) return { key: 'call', label: 'Call ad · 2521', icon: 'call', cls: 'bg-primary-fixed text-on-primary-fixed-variant' };
+  if (/call|inbound|phone|vapi|2521/.test(s)) return { key: 'call', label: 'Call ad', icon: 'call', cls: 'bg-primary-fixed text-on-primary-fixed-variant' };
   if (/team|manual|staff|admin|app/.test(s)) return { key: 'team', label: 'Team-added', icon: 'person_add', cls: 'bg-surface-container text-on-surface-variant' };
   if (/test/.test(s)) return { key: 'test', label: 'Test', icon: 'science', cls: 'bg-secondary-fixed/50 text-on-secondary-fixed-variant' };
   return { key: 'other', label: cap(src || 'Unknown'), icon: 'label', cls: 'bg-surface-container text-on-surface-variant' };
@@ -438,7 +438,7 @@ var SERVICE_RX = {
 function svcNorm(v) { return String(v || '').toLowerCase().replace(/[\u2013\u2014-]/g, '-').replace(/\s+/g, ' ').trim(); }
 function svcMatch(s, v) { var n = svcNorm(v); if (n && n === svcNorm(s)) return true; if (s === 'Other') return !n || SERVICE_RX.Other.test(n) || !Object.keys(SERVICE_RX).some(function (k) { return k !== 'Other' && (svcNorm(k) === n || SERVICE_RX[k].test(n)); }); return !!(SERVICE_RX[s] && SERVICE_RX[s].test(n)); }
 var AREAS = ['Arabian Ranches', 'Jumeirah Islands', 'Emirates Hills', 'The Springs', 'The Meadows', 'Jumeirah Park'];
-var SRC_FILTER = { 'Call ad · 2521': 'call', 'Instant Form': 'form', 'WhatsApp ad · 786': 'whatsapp', 'Website': 'website', 'Answered by Sara': 'sara', 'Booking page': 'booking', 'Instagram / social': 'social', 'Team-added': 'team' };
+var SRC_FILTER = { 'Call ad': 'call', 'Call ad · 2521': 'call', 'Instant Form': 'form', 'WhatsApp ad': 'whatsapp', 'WhatsApp ad · 786': 'whatsapp', 'Website': 'website', 'Answered by Sara': 'sara', 'Booking page': 'booking', 'Instagram / social': 'social', 'Team-added': 'team' };
 function dateRange(f) {
   var t = today();
   switch (f.date) { case 'today': return [t, t]; case 'yesterday': var y = addDays(t, -1); return [y, y]; case '7d': return [addDays(t, -6), t]; case '30d': return [addDays(t, -29), t]; case 'custom': return [f.from || '0000-01-01', f.to || '9999-12-31']; default: return null; }
@@ -532,6 +532,7 @@ async function openFilter() {
   ['Booking page', 'Instagram / social', 'Team-added'].forEach(function (l) { var b = document.createElement('button'); b.type = 'button'; b.setAttribute('data-category', 'source'); b.className = CHIP_OFF; b.innerHTML = chipHtml(l, false); srcWrap.appendChild(b); });
   var svcFirst = $$(ov, '.filter-chip[data-category="service"]')[0]; if (svcFirst) { var svcWrap = svcFirst.parentElement; svcWrap.innerHTML = Object.keys(SERVICE_RX).map(function (l) { return '<button type="button" data-category="service" class="' + CHIP_OFF + '">' + chipHtml(l, false) + '</button>'; }).join(''); }
   var areaOther = byText(ov, '.filter-chip span', 'Other Dubai Areas'); if (areaOther) areaOther.textContent = 'Other';
+  $$(ov, '.filter-chip[data-category="source"] span').forEach(function (s) { var t = s.textContent.trim(), u = t.replace(/ · (786|2521)$/, ''); if (u !== t) s.textContent = u; });
   function listFor(cat) { return cat === 'source' ? f.sources : cat === 'service' ? f.services : f.areas; }
   function valOf(b) { var l = txt($$(b, 'span').pop()); return b.getAttribute('data-category') === 'source' ? SRC_FILTER[l] : l; }
   $$(ov, '.filter-chip[data-category]').forEach(function (b) { b.addEventListener('click', function () { var arr = listFor(b.getAttribute('data-category')), v = valOf(b), i = arr.indexOf(v); if (i >= 0) arr.splice(i, 1); else arr.push(v); paint(); }); });
@@ -1301,7 +1302,7 @@ function openAddLead() {
     fieldHtml('Name', '<input class="' + INP + '" name="name" type="text" placeholder="Customer name"/>') +
     '<div class="grid grid-cols-2 gap-space-sm">' + fieldHtml('Area', '<input class="' + INP + '" name="area" list="area-list" placeholder="Arabian Ranches"/><datalist id="area-list">' + AREAS.map(function (a) { return '<option value="' + a + '">'; }).join('') + '</datalist>') +
     fieldHtml('Service', '<select class="' + INP + '" name="service"><option value="">Select…</option>' + opts(Object.keys(SERVICE_RX).map(function (k) { return [k, k]; })) + '</select>') + '</div>' +
-    fieldHtml('Source', '<select class="' + INP + '" name="source">' + opts([['manual', 'Team-added'], ['meta-call', 'Call ad · 2521'], ['meta-form', 'Instant Form'], ['whatsapp', 'WhatsApp ad · 786'], ['website-form', 'Website'], ['booking-page', 'Booking page'], ['social-dm', 'Instagram / social DM']]) + '</select>') +
+    fieldHtml('Source', '<select class="' + INP + '" name="source" required><option value="">Select…</option>' + opts([['whatsapp', 'WhatsApp ad'], ['meta-call', 'Call ad'], ['manual', 'Other']]) + '</select>') +
     fieldHtml('Email (optional)', '<input class="' + INP + '" name="email" type="email" placeholder="name@example.com"/>') +
     fieldHtml('Note', '<textarea class="' + INP + ' min-h-[80px]" name="note" placeholder="What does the customer need?"></textarea>') +
     '<label class="relative flex items-center justify-between gap-2.5 cursor-pointer select-none py-1"><span class="font-label-md text-label-md text-on-surface">Send welcome WhatsApp &amp; follow up automatically</span><span class="relative inline-flex items-center"><input class="sr-only peer" name="auto" type="checkbox"/><div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full after:content-[\'\'] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:shadow-sm peer-checked:bg-tertiary-container transition-colors"></div></span></label>' +
