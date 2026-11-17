@@ -70,9 +70,10 @@ function toast(msg, ic) {
 }
 
 /* ---------- data ---------- */
+function qFail(table, m) { console.warn('[dash.' + table + ']', m); var t = Date.now(); if (t - (S.qErrAt || 0) > 30000) { S.qErrAt = t; toast('Some data could not load — check the connection', 'cloud_off'); } }
 async function q(table, build) {
-  try { var qb = sb.from(table).select('*'); if (build) qb = build(qb); var r = await qb; if (r.error) { console.warn('[dash.' + table + ']', r.error.message); return []; } return r.data || []; }
-  catch (e) { console.warn('[dash.' + table + ']', e.message); return []; }
+  try { var qb = sb.from(table).select('*'); if (build) qb = build(qb); var r = await qb; if (r.error) { qFail(table, r.error.message); return []; } return r.data || []; }
+  catch (e) { qFail(table, e.message); return []; }
 }
 var ST_MSG = {
   wa: { queued: 'Message queued — it goes out on WhatsApp shortly', outside_window: '24h reply window is closed — use Propose time instead (it goes as an approved template).', opted_out: 'This customer opted out of WhatsApp messages', test_mode: 'Test mode is ON — only test numbers get messages, so this was not sent', not_connected: 'WhatsApp API is not connected yet — message not sent', invalid: 'Message not sent — check the text (empty or too long)', not_found: 'Lead not found — refresh and try again' },
@@ -431,7 +432,6 @@ var SERVICE_RX = {
   'Solar car park installation': /car ?park|carport/i,
   'EV charger installation': /\bev\b|charger|charging/i,
   'Water tank': /tank/i,
-  'Plumbing': /plumb/i,
   'AMC contract': /amc|contract/i,
   'Other': /other/i
 };
@@ -514,7 +514,7 @@ var Leads = { file: 'leads', title: 'Leads', setup: function (root) {
 } };
 function exportCsv(rows) {
   var cols = ['created_at', 'name', 'phone', 'email', 'area', 'service', 'source', 'status', 'lead_score', 'next_meeting_dubai', 'odoo_lead_id'];
-  var csv = cols.join(',') + '\n' + rows.map(function (r) { return cols.map(function (c) { return '"' + String(r[c] == null ? '' : r[c]).replace(/"/g, '""') + '"'; }).join(','); }).join('\n');
+  var csv = cols.join(',') + '\n' + rows.map(function (r) { return cols.map(function (c) { var v = String(r[c] == null ? '' : r[c]); if (/^[=+\-@\t\r]/.test(v)) v = "'" + v; return '"' + v.replace(/"/g, '""') + '"'; }).join(','); }).join('\n');
   try { var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' })); a.download = 'fefco-leads-' + today() + '.csv'; document.body.appendChild(a); a.click(); a.remove(); toast('Exported ' + rows.length + ' leads', 'ios_share'); } catch (e) { toast('Export not available here', 'error'); }
 }
 var CHIP_ON = 'filter-chip is-selected min-h-[44px] px-space-md py-space-xs rounded-full flex items-center gap-space-xs font-label-sm bg-primary-fixed/30 text-on-primary-container shadow-sm transition-all';
@@ -977,7 +977,8 @@ var Chat = { file: 'chat', title: 'WhatsApp', setup: function (root, key) {
 }, refresh: async function (root, key, rid) {
   var isId = /^[0-9a-f-]{36}$/i.test(key);
   var res = await Promise.all([isId ? q('leads', function (b) { return b.eq('id', key).limit(1); }) : q('leads', function (b) { return b.eq('phone', key).limit(1); }),
-    q('whatsapp_messages', function (b) { return (isId ? b.eq('lead_id', key) : b.eq('phone', key)).order('occurred_at', { ascending: true }).limit(500); })]);
+    q('whatsapp_messages', function (b) { return (isId ? b.eq('lead_id', key) : b.eq('phone', key)).order('occurred_at', { ascending: false }).limit(500); })]);
+  res[1] = res[1].slice().reverse(); /* newest 500, shown oldest-first */
   if (stale(rid)) return;
   var l = res[0][0] || {}, msgs = res[1].filter(function (m) { return m.audience !== 'team'; }); S.chatLead = l.id ? l : null;
   var main = $(root, 'main'), sub = $(main, '.sticky.top-16');
@@ -1350,7 +1351,7 @@ async function route() {
   if (routing) { setTimeout(route, 50); return; } routing = true;
   try {
     if (!S.session) { await mount(Login); return; }
-    if (!S.me) { try { S.me = (await rpc('me')) || { is_team: false }; } catch (e) { S.me = { is_team: false, error: e.message }; } }
+    if (!S.me) { try { S.me = (await rpc('me')) || { is_team: false }; } catch (e) { S.me = null; toast('Could not check your access — connection problem. Retrying…', 'cloud_off'); if (!S.ctl) await mount(Login); return; } }
     if (!S.me.is_team) { await mount(Login); return; }
     if (!S.settings) { await loadSettings(); await loadGlobals(); }
     if (r.name === 'login') { location.replace('#/home'); return; }
@@ -1358,7 +1359,7 @@ async function route() {
   } catch (e) { console.error(e); toast(e.message || 'Something went wrong', 'error'); }
   finally { routing = false; }
 }
-async function tick() { if (document.hidden || !S.session || !S.me || !S.me.is_team || !S.ctl || S.ctl === Login) return; await loadGlobals(); wireBadges(); refresh(); }
+async function tick() { if (document.hidden) return; if (S.session && !S.me) { route(); return; } if (!S.session || !S.me || !S.me.is_team || !S.ctl || S.ctl === Login) return; await loadGlobals(); wireBadges(); refresh(); }
 function wireBadges() { var app = $(document, '#app'); var bell = $(app, 'header button[aria-label="Notifications"] span.absolute'); if (bell) { bell.textContent = String(S.openAlerts); bell.classList.toggle('hidden', !S.openAlerts); } }
 
 async function boot() {
@@ -1366,10 +1367,11 @@ async function boot() {
   sb.auth.onAuthStateChange(function (ev, session) {
     S.session = session;
     if (ev === 'PASSWORD_RECOVERY') { S.recovery = true; location.hash = '#/login'; setTimeout(route, 0); }
-    if (ev === 'SIGNED_OUT') { S.me = null; }
+    if (ev === 'SIGNED_OUT') { S.me = null; S.settings = null; S.leadsAll = null; if (S.ctl && S.ctl !== Login) go('#/login'); }
   });
   try { var r = await sb.auth.getSession(); S.session = r.data.session; } catch (e) { S.session = null; }
   if (/access_token=|type=recovery/.test(location.hash)) { history.replaceState(null, '', location.pathname + location.search + (S.recovery ? '#/login' : '#/home')); }
+  else if (/error_description=/.test(location.hash)) { var em = /error_description=([^&]*)/.exec(location.hash); history.replaceState(null, '', location.pathname + location.search + '#/login'); setTimeout(function () { toast(decodeURIComponent((em && em[1] || 'Link invalid or expired').replace(/\+/g, ' ')), 'error'); }, 300); }
   window.addEventListener('hashchange', route);
   document.addEventListener('visibilitychange', function () { if (!document.hidden) tick(); });
   setInterval(tick, POLL_MS);
